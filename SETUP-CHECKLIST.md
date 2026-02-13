@@ -9,36 +9,41 @@
 
 ### 1. Software Installation
 
-- [ ] **Java JDK 17+** installed
+- [x] **Java JDK 17+** installed
+
   ```bash
   java --version
   # Should show version 17 or higher
   ```
+
   📥 Download: https://www.oracle.com/java/technologies/downloads/
 
-- [ ] **Maven** installed (or use VS Code extension)
+- [x] **Maven** installed (or use VS Code extension)
+
   ```bash
   mvn --version
   ```
+
   📥 Download: https://maven.apache.org/download.cgi
 
-- [ ] **VS Code** installed with extensions:
-  - [ ] Extension Pack for Java
-  - [ ] Spring Boot Extension Pack
-  - [ ] GitLens
-  - [ ] Docker (for later, but install now)
-  - [ ] GitHub Copilot / Claude / ChatGPT extension
+- [x] **VS Code** installed with extensions:
+  - [x] Extension Pack for Java
+  - [x] Spring Boot Extension Pack
+  - [x] GitLens
+  - [x] Docker (for later, but install now)
+  - [x] GitHub Copilot / Claude / ChatGPT extension
 
-- [ ] **Git** configured properly
+- [x] **Git** configured properly
+
   ```bash
   git config --global user.name "Your Name"
   git config --global user.email "your.email@harman.com"
   git config --list
   ```
 
-- [ ] **Postman** or **REST Client** (for API testing later)
-  📥 Download: https://www.postman.com/downloads/
-  Or: Install "REST Client" VS Code extension
+- [x] **Postman** or **REST Client** (for API testing later)
+      📥 Download: https://www.postman.com/downloads/
+      Or: Install "REST Client" VS Code extension
 
 ---
 
@@ -47,9 +52,9 @@
 - [x] Repository cloned ✅ (Already done!)
 - [x] README.md updated ✅ (Already done!)
 - [x] Documentation created ✅ (Already done!)
-- [ ] Can open in VS Code: `code .`
-- [ ] All folders visible in Explorer
-- [ ] Git push works (`git push origin main`)
+- [x] Can open in VS Code: `code .`
+- [x] All folders visible in Explorer
+- [x] Git push works (`git push origin main`)
 
 ---
 
@@ -58,31 +63,34 @@
 Bookmark these for quick access:
 
 **YouTube Channels**:
-- [ ] [Telusko](https://www.youtube.com/@Telusko)
-- [ ] [Kunal Kushwaha](https://www.youtube.com/@KunalKushwaha)
-- [ ] [Java Brains](https://www.youtube.com/@Java.Brains)
-- [ ] [Amigoscode](https://www.youtube.com/@amigoscode)
-- [ ] [TechWorld with Nana](https://www.youtube.com/@TechWorldwithNana)
+
+- [x] [Telusko](https://www.youtube.com/@Telusko)
+- [x] [Kunal Kushwaha](https://www.youtube.com/@KunalKushwaha)
+- [] [Java Brains](https://www.youtube.com/@Java.Brains)
+- [] [Amigoscode](https://www.youtube.com/@amigoscode)
+- [] [TechWorld with Nana](https://www.youtube.com/@TechWorldwithNana)
 
 **Practice Platforms**:
-- [ ] [LeetCode](https://leetcode.com)
-- [ ] [HackerRank Java](https://www.hackerrank.com/domains/java)
+
+- [x] [LeetCode](https://leetcode.com)
+- [x] [HackerRank Java](https://www.hackerrank.com/domains/java)
 
 **Documentation**:
+
 - [ ] [Java Docs](https://docs.oracle.com/en/java/)
-- [ ] [Spring.io](https://spring.io)
+- [x] [Spring.io](https://spring.io)
 
 ---
 
 ### 4. Tracker Setup
 
-- [ ] Open `tracker/RoadmapTracker_Final_v3.html` in browser
-- [ ] Bookmark the tracker page (you'll open it daily)
-- [ ] **DO NOT set start date yet** (wait until you actually start)
-- [ ] Test the buttons:
-  - [ ] "Weekly Progress Report" works
-  - [ ] "Export Progress" downloads JSON
-  - [ ] "Import Progress" opens file picker
+- [x] Open `tracker/RoadmapTracker_Final_v3.html` in browser
+- [x] Bookmark the tracker page (you'll open it daily)
+- [x] **DO NOT set start date yet** (wait until you actually start)
+- [x] Test the buttons:
+  - [x] "Weekly Progress Report" works
+  - [x] "Export Progress" downloads JSON
+  - [x] "Import Progress" opens file picker
 
 ---
 
@@ -99,7 +107,7 @@ Read these (30-45 minutes total):
 
 ---
 
-### 6. VS Code Chat Test
+### 6. VS Code Chat Testīng your AI setup:
 
 - [ ] Open VS Code Chat panel (`Ctrl+Alt+I` or left sidebar)
 - [ ] Click "Add Context" button
@@ -142,10 +150,10 @@ java-backend-devops-golang-roadmap/
 ### 8. Optional But Recommended
 
 - [ ] **Docker Desktop** installed (for Weeks 13-16)
-  📥 Download: https://www.docker.com/products/docker-desktop/
+      📥 Download: https://www.docker.com/products/docker-desktop/
 
 - [ ] **DBeaver** or database client (for Week 5 SQL)
-  📥 Download: https://dbeaver.io/download/
+      📥 Download: https://dbeaver.io/download/
 
 - [ ] **Create a learning calendar** (Google Calendar, Notion, etc.)
   - Block 1.5-2 hours daily for learning
@@ -192,17 +200,17 @@ Use this space to track what you've completed:
 [Date: ________]
 
 ✅ Completed today:
-- 
-- 
-- 
+-
+-
+-
 
 ⏳ Still need to do:
-- 
-- 
+-
+-
 
 💡 Questions/Issues:
-- 
-- 
+-
+-
 
 📅 Plan to start Day 1 on: ____________
 ```
@@ -212,20 +220,24 @@ Use this space to track what you've completed:
 ## 🆘 Having Issues?
 
 ### Java not working?
+
 - Check JAVA_HOME environment variable
 - Add Java bin to PATH
 - Restart VS Code after installing
 
 ### VS Code Chat not available?
+
 - Install GitHub Copilot extension (needs subscription)
 - Or try free alternatives: ChatGPT extension, Claude
 
 ### Git push failing?
+
 - Check git credentials
 - Try: `git config --list`
 - May need to authenticate with GitHub
 
 ### Can't open HTML tracker?
+
 - Just double-click the file
 - Should open in your default browser
 - Works offline, no server needed
@@ -240,5 +252,5 @@ Until then, take your time with setup. There's no rush! 😊
 
 ---
 
-*Setup Phase Started: February 13, 2026*  
-*Ready to begin learning: When you say so! 🎯*
+_Setup Phase Started: February 13, 2026_  
+_Ready to begin learning: When you say so! 🎯_

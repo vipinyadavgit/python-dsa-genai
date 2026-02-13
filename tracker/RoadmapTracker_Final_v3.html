@@ -329,6 +329,35 @@
     .okText{ color: var(--good); }
     .warnText{ color: var(--warn); }
     .tiny{ font-size:11px; color:var(--muted); }
+    
+    /* Production Issues Practice Lab Styles */
+    .prodWeek summary{
+      cursor:pointer;
+      padding:12px 14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--text);
+      font-size:13px;
+      user-select:none;
+      transition: all 0.2s ease;
+    }
+    .prodWeek summary:hover{
+      background:linear-gradient(180deg, rgba(77,163,255,0.12), rgba(77,163,255,0.04));
+      border-color: rgba(77,163,255,0.35);
+    }
+    .prodWeek[open] summary{
+      border-radius:10px 10px 0 0;
+      border-bottom:1px solid rgba(77,163,255,0.25);
+      background:linear-gradient(180deg, rgba(77,163,255,0.15), rgba(77,163,255,0.05));
+    }
+    .prodWeek details{
+      border:1px solid var(--border);
+      border-radius:10px;
+    }
+    .prodWeek[open]{
+      border-color: rgba(77,163,255,0.35);
+    }
   </style>
 </head>
 
@@ -359,10 +388,10 @@
       <h2>📌 The 8-Point System (Integrated Strategy)</h2>
       <p class="muted">Follow this every day. This tracker is your full career dashboard.</p>
       <ol class="rules">
-        <li><b>Fixed Daily Routine (1.5–2 hrs):</b> 45 min learning + 45 min coding + 15 min revision & tracker update.</li>
-        <li><b>One Notes System:</b> Write key summary + mistakes + interview points in the daily notes box.</li>
+        <li><b>Fixed Daily Routine (1.5–2 hrs):</b> 45 min learning + 45 min coding + 15 min revision & tracker update + 5-10 min production issues review.</li>
+        <li><b>One Notes System:</b> Write key summary + mistakes + interview points + production debugging tips in the daily notes box.</li>
         <li><b>GitHub Daily Push:</b> Push code daily (checkbox included in each day).</li>
-        <li><b>Weekly Review Sunday:</b> Use Weekly Report button + revise + solve 1 mini test.</li>
+        <li><b>Weekly Review Sunday:</b> Use Weekly Report button + revise + solve 1 mini test + update production-issues.md.</li>
         <li><b>Interview Mindset:</b> After topic, ask: “Can I explain in 2 minutes?”</li>
         <li><b>No Topic Jumping:</b> Follow the roadmap order. Avoid random YouTube trap.</li>
         <li><b>AI Tools Rule:</b> Write logic first → use AI to optimize (not to copy).</li>
@@ -397,6 +426,237 @@
     <h2>🧱 Roadmap (Week 1 → Week 24)</h2>
     <p class="muted">Each day has: Topics + checklist + notes. Checkboxes auto-save.</p>
     <div id="roadmap"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h2>🚨 Production Issues Practice Lab (Week-by-Week)</h2>
+    <p class="muted">Learn debugging & troubleshooting alongside development. Document in <code style="color:var(--accent)">notes/production-issues.md</code></p>
+    
+    <div style="margin-top:16px;">
+      <details class="prodWeek">
+        <summary><b>Weeks 1-4: Core Java Production Issues</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 1:</b> Stack traces, basic debugging with IDE</li>
+              <li><b>Week 2:</b> OutOfMemoryError, heap dumps, exception handling</li>
+              <li><b>Week 3:</b> StackOverflowError, thread dumps, deadlock detection</li>
+              <li><b>Week 4:</b> JVM monitoring (jps, jstack, jmap), profiling basics</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Intentionally create memory leak → detect with jmap</li>
+              <li>Create infinite recursion → analyze with stack trace</li>
+              <li>Create deadlock scenario → detect with jstack</li>
+              <li>Practice reading heap dumps with VisualVM/Eclipse MAT</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document in notes/production-issues.md:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Core Java Issues" section</li>
+              <li>Add your debugging experiences</li>
+              <li>Save JVM commands cheat sheet</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="prodWeek" style="margin-top:10px;">
+        <summary><b>Weeks 5-9: Spring Boot Production Issues</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 5:</b> DB connection pool exhaustion, slow queries</li>
+              <li><b>Week 6:</b> Application startup failures, port conflicts</li>
+              <li><b>Week 7:</b> API errors (500, 404), structured logging with SLF4J</li>
+              <li><b>Week 8:</b> Authentication failures, JWT issues</li>
+              <li><b>Week 9:</b> Global exception handling, error response design</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Add Spring Boot Actuator + create health checks</li>
+              <li>Implement @ControllerAdvice for global error handling</li>
+              <li>Test connection pool exhaustion scenarios</li>
+              <li>Set up logback.xml with proper log levels</li>
+              <li>Create custom error responses for API</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Spring Boot Issues" section</li>
+              <li>Save your exception handler code</li>
+              <li>Document logging best practices</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="prodWeek" style="margin-top:10px;">
+        <summary><b>Weeks 10-12: Microservices Production Issues</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 10:</b> Service discovery failures (Eureka/Consul)</li>
+              <li><b>Week 11:</b> Circuit breaker patterns, timeout handling, retry logic</li>
+              <li><b>Week 12:</b> Distributed tracing, correlation IDs, saga failures</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Implement circuit breaker with Resilience4j</li>
+              <li>Add correlation IDs to all service logs</li>
+              <li>Test service failure + fallback scenarios</li>
+              <li>Practice debugging distributed system issues</li>
+              <li>Simulate network delays and test timeouts</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Microservices Issues" section</li>
+              <li>Document circuit breaker configurations</li>
+              <li>Save distributed tracing setup</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="prodWeek" style="margin-top:10px;">
+        <summary><b>Weeks 13-16: Docker & Kubernetes Production Issues</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 13:</b> Container crashes, ImagePullBackOff, disk space issues</li>
+              <li><b>Week 14:</b> Docker networking issues, volume problems</li>
+              <li><b>Week 15:</b> Pod Pending, CrashLoopBackOff, OOMKilled</li>
+              <li><b>Week 16:</b> Service not accessible, ingress issues, resource limits</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Deliberately crash containers and debug with <code>docker logs</code></li>
+              <li>Set resource limits and test OOM scenarios</li>
+              <li>Use <code>kubectl describe pod/logs/events</code> for debugging</li>
+              <li>Practice fixing CrashLoopBackOff issues</li>
+              <li>Debug service discovery in K8s</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Docker Issues" and "Kubernetes Issues" sections</li>
+              <li>Save kubectl debugging commands</li>
+              <li>Document resource limit configurations</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="prodWeek" style="margin-top:10px;">
+        <summary><b>Weeks 17-20: DevOps & Monitoring</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 17:</b> Helm deployment failures, values override issues</li>
+              <li><b>Week 18:</b> CI/CD pipeline failures, build errors, deployment rollback</li>
+              <li><b>Week 19:</b> AWS issues (EC2, S3, RDS connection problems)</li>
+              <li><b>Week 20:</b> Monitoring with Prometheus/Grafana, alerting, incident response</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Set up application metrics with Actuator + Prometheus</li>
+              <li>Create Grafana dashboards for your services</li>
+              <li>Configure alerts for critical metrics</li>
+              <li>Practice debugging failed deployments</li>
+              <li>Write an incident response runbook</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Monitoring & Observability" section</li>
+              <li>Document your monitoring stack setup</li>
+              <li>Create incident response process</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="prodWeek" style="margin-top:10px;">
+        <summary><b>Weeks 21-24: Golang Production Issues</b></summary>
+        <div style="padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; margin-top:8px;">
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--accent); font-weight:600; margin-bottom:6px;">📚 Topics to Learn:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li><b>Week 21:</b> Goroutine leaks, memory profiling with pprof</li>
+              <li><b>Week 22:</b> Race conditions, concurrent map access</li>
+              <li><b>Week 23:</b> Go API errors, panic recovery, proper error handling</li>
+              <li><b>Week 24:</b> Go debugging tools, production readiness checklist</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="color:var(--good); font-weight:600; margin-bottom:6px;">🔬 Practice Exercises:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Use <code>go run -race</code> to detect race conditions</li>
+              <li>Profile Go applications with pprof</li>
+              <li>Implement graceful shutdown in Go services</li>
+              <li>Practice debugging goroutine leaks</li>
+              <li>Complete production readiness checklist</li>
+            </ul>
+          </div>
+          <div>
+            <div style="color:var(--warn); font-weight:600; margin-bottom:6px;">📝 Document:</div>
+            <ul style="margin:4px 0; padding-left:20px; color:var(--muted); font-size:13px;">
+              <li>Fill "Golang Issues" section</li>
+              <li>Save Go debugging commands</li>
+              <li>Document concurrency patterns</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div style="margin-top:20px; padding:16px; background:rgba(77,163,255,0.08); border:1px solid rgba(77,163,255,0.25); border-radius:10px;">
+      <div style="font-weight:600; color:var(--accent); margin-bottom:8px;">💡 Weekly Production Practice (15-20 min)</div>
+      <ol style="margin:4px 0; padding-left:20px; font-size:13px; line-height:1.7;">
+        <li>Break something intentionally in your project</li>
+        <li>Practice debugging it with appropriate tools</li>
+        <li>Document the process in <code>notes/production-issues.md</code></li>
+        <li>Add prevention strategies</li>
+      </ol>
+    </div>
+
+    <div style="margin-top:14px; padding:16px; background:rgba(74,222,128,0.06); border:1px solid rgba(74,222,128,0.25); border-radius:10px;">
+      <div style="font-weight:600; color:var(--good); margin-bottom:8px;">🎯 Production Mindset - Ask Every Time You Code:</div>
+      <ul style="margin:4px 0; padding-left:20px; font-size:13px; line-height:1.7;">
+        <li>❓ What could go wrong?</li>
+        <li>🔍 How would I debug this in production?</li>
+        <li>📝 What logs do I need?</li>
+        <li>📊 How do I monitor this?</li>
+        <li>⚠️ What's the failure scenario?</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:14px; padding:12px; background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); border-radius:10px;">
+      <div style="font-weight:600; color:var(--warn); font-size:13px;">
+        📌 Every project must include: ✅ Error handling • ✅ Structured logging • ✅ Health checks • ✅ Graceful shutdown • ✅ Resource limits
+      </div>
+    </div>
   </div>
 
   <div class="footer">

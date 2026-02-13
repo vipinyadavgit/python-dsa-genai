@@ -9,17 +9,17 @@ Use this checklist to ensure you're all set up before starting Week 1 Day 1.
 ## ✅ Pre-Learning Setup (15 minutes)
 
 ### 1. Development Environment
-- [ ] Java JDK 17+ installed
+- [x] Java JDK 17+ installed
   ```bash
   java --version
   # Should show: java version "17" or higher
   ```
-- [ ] VS Code installed with extensions:
-  - [ ] Extension Pack for Java
-  - [ ] Spring Boot Extension Pack
-  - [ ] GitLens
-  - [ ] GitHub Copilot (or Claude/ChatGPT extension)
-- [ ] Git configured
+- [x] VS Code installed with extensions:
+  - [x] Extension Pack for Java
+  - [x] Spring Boot Extension Pack
+  - [x] GitLens
+  - [x] GitHub Copilot (or Claude/ChatGPT extension)
+- [] Git configured
   ```bash
   git config --global user.name "Your Name"
   git config --global user.email "your.email@example.com"
