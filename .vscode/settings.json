@@ -1,0 +1,48 @@
+{
+  // Java Configuration
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.saveActions.organizeImports": true,
+  
+  // Formatting
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  
+  // Java Formatting
+  "[java]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "redhat.java"
+  },
+  
+  // Spring Boot
+  "[spring-boot-properties]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  
+  // Files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  
+  // Git
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  
+  // Editor
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  
+  // Copilot (if available)
+  "github.copilot.enable": {
+    "*": true,
+    "java": true,
+    "markdown": true
+  }
+}
