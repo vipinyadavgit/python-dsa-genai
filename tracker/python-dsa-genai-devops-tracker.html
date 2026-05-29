@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Python + DSA + GenAI + DevOps Career Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .progress-container {
+      width: 100%;
+      background: #334155;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      height: 22px;
+      width: 0%;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      text-align: center;
+      line-height: 22px;
+      font-size: 12px;
+      transition: 0.4s;
+    }
+
+    .phase {
+      margin-bottom: 30px;
+    }
+
+    .week {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #111827;
+    }
+
+    .topic {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .topic:hover {
+      background: #1f2937;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    button {
+      background: #2563eb;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      resize: vertical;
+      margin-top: 10px;
+      background: #0f172a;
+      color: white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .stat-box h2 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #1e293b;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      opacity: 0.7;
+      margin-top: 30px;
+    }
+
+    .dark-light {
+      background: #10b981;
+    }
+
+    .light-mode {
+      background: #f8fafc;
+      color: #111827;
+    }
+
+    .light-mode .card,
+    .light-mode .stat-box,
+    .light-mode .week,
+    .light-mode textarea,
+    .light-mode .search-box {
+      background: white;
+      color: #111827;
+    }
+
+    .light-mode .topic:hover {
+      background: #f1f5f9;
+    }
+
+    .light-mode .progress-container {
+      background: #cbd5e1;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #0ea5e9;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .phase-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .phase-1 { background: #8b5cf6; }
+    .phase-2 { background: #ec4899; }
+    .phase-3 { background: #f59e0b; }
+    .phase-4 { background: #10b981; }
+    .phase-5 { background: #3b82f6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="topbar">
+      <h1>🚀 Ultimate Python + DSA + GenAI + DevOps Career Dashboard</h1>
+      <div>
+        <button onclick="toggleTheme()" class="dark-light">🌗 Toggle Theme</button>
+        <button onclick="exportProgress()">⬇ Export Progress</button>
+        <button onclick="importProgress()">⬆ Import Progress</button>
+        <button onclick="resetProgress()">🗑 Reset</button>
+      </div>
+    </div>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search topics..." onkeyup="searchTopics()">
+
+    <div class="stats">
+      <div class="stat-box">
+        <h2 id="xpPoints">0 XP</h2>
+        <p>XP Earned</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="level">Level 1</h2>
+        <p>Current Level</p>
+      </div>
+      <div class="stat-box">
+        <h2 id="completedCount">0</h2>
+        <p>Completed Topics</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="remainingCount">0</h2>
+        <p>Remaining Topics</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="progressPercent">0%</h2>
+        <p>Total Progress</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="streak">1</h2>
+        <p>Learning Streak</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📈 Overall Progress</h2>
+      <canvas id="progressChart" height="100"></canvas>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+      </div>
+    </div>
+
+    <div id="roadmap"></div>
+
+    <div class="card">
+      <h2>🧠 AI Learning Dashboard</h2>
+      <ul style="padding-left:20px; line-height:2;">
+        <li>✅ Python Learning Progress</li>
+        <li>✅ DSA Preparation Tracking</li>
+        <li>✅ GenAI Roadmap Tracking</li>
+        <li>✅ DevOps Skills Tracking</li>
+        <li>✅ Interview Preparation Monitoring</li>
+        <li>✅ Project Building Progress</li>
+        <li>✅ Daily Coding Habit</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Interview Preparation Tracker</h2>
+
+      <div class="topic"><input type="checkbox" class="interview"> Python Interview Questions</div>
+      <div class="topic"><input type="checkbox" class="interview"> SQL Interview Questions</div>
+      <div class="topic"><input type="checkbox" class="interview"> DSA Mock Interview</div>
+      <div class="topic"><input type="checkbox" class="interview"> Docker Interview Questions</div>
+      <div class="topic"><input type="checkbox" class="interview"> Kubernetes Interview Questions</div>
+      <div class="topic"><input type="checkbox" class="interview"> CI/CD Interview Questions</div>
+      <div class="topic"><input type="checkbox" class="interview"> HR Interview Preparation</div>
+      <div class="topic"><input type="checkbox" class="interview"> Resume Updated</div>
+      <div class="topic"><input type="checkbox" class="interview"> LinkedIn Optimized</div>
+    </div>
+
+    <div class="card">
+      <h2>🏆 LeetCode Style DSA Tracker</h2>
+
+      <div class="topic"><input type="checkbox" class="leetcode"> Arrays Problems</div>
+      <div class="topic"><input type="checkbox" class="leetcode"> Strings Problems</div>
+      <div class="topic"><input type="checkbox" class="leetcode"> Linked List Problems</div>
+      <div class="topic"><input type="checkbox" class="leetcode"> Trees Problems</div>
+      <div class="topic"><input type="checkbox" class="leetcode"> Graph Problems</div>
+      <div class="topic"><input type="checkbox" class="leetcode"> Dynamic Programming Problems</div>
+    </div>
+
+    <div class="card">
+      <h2>📝 Daily Notes</h2>
+      <button onclick="downloadNotes()">⬇ Download Notes</button>
+      <textarea id="notes" placeholder="Write your learning notes here..."></textarea>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Daily Checklist</h2>
+
+      <div class="topic"><input type="checkbox" class="daily"> Topic Learned</div>
+      <div class="topic"><input type="checkbox" class="daily"> Coding Practice Done</div>
+      <div class="topic"><input type="checkbox" class="daily"> Revision Done</div>
+      <div class="topic"><input type="checkbox" class="daily"> GitHub Push Done</div>
+      <div class="topic"><input type="checkbox" class="daily"> DSA Practice Done</div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Project Tracker</h2>
+
+      <div class="topic"><input type="checkbox" class="project"> Calculator App</div>
+      <div class="topic"><input type="checkbox" class="project"> Expense Tracker</div>
+      <div class="topic"><input type="checkbox" class="project"> REST API Project</div>
+      <div class="topic"><input type="checkbox" class="project"> Dockerized Application</div>
+      <div class="topic"><input type="checkbox" class="project"> Kubernetes Deployment</div>
+      <div class="topic"><input type="checkbox" class="project"> CI/CD Pipeline</div>
+      <div class="topic"><input type="checkbox" class="project"> AI Chatbot</div>
+      <div class="topic"><input type="checkbox" class="project"> RAG Chatbot</div>
+      <div class="topic"><input type="checkbox" class="project"> AI SQL Assistant</div>
+    </div>
+
+    <div class="card">
+      <h2>⏰ Daily Reminder</h2>
+      <p id="reminderText">🚀 Don't forget today's coding practice!</p>
+      <button onclick="showReminder()">Show Reminder</button>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Suggested Projects</h2>
+      <ul style="padding-left:20px; line-height:2;">
+        <li>Calculator App</li>
+        <li>Expense Tracker</li>
+        <li>Student Management System</li>
+        <li>REST API with FastAPI</li>
+        <li>Dockerized Python Application</li>
+        <li>Kubernetes Multi-Container App</li>
+        <li>Helm Chart for Microservices</li>
+        <li>GitHub Actions CI/CD Pipeline</li>
+        <li>AI Chatbot</li>
+        <li>RAG Chatbot</li>
+        <li>AI SQL Assistant</li>
+        <li>Resume Analyzer</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      Built for becoming Python + GenAI + DevOps Developer 🚀
+    </div>
+  </div>
+
+  <input type="file" id="importFile" accept=".json" style="display:none;" onchange="handleImport(event)">
+
+  <script>
+    const roadmapData = [
+      {
+        phase: "PHASE 1 — Python Foundations",
+        badge: "phase-1",
+        weeks: [
+          {
+            title: "Week 1 — Python Basics",
+            topics: [
+              "Python Setup",
+              "Variables",
+              "Data Types",
+              "Input/Output",
+              "Operators",
+              "Type Conversion",
+              "if-else",
+              "Loops",
+              "Mini Calculator Project"
+            ]
+          },
+          {
+            title: "Week 2 — Strings + Collections",
+            topics: [
+              "Strings",
+              "String Methods",
+              "Lists",
+              "Tuples",
+              "Sets",
+              "Dictionaries",
+              "Nested Collections",
+              "Mini Contact Book"
+            ]
+          },
+          {
+            title: "Week 3 — Functions + Problem Solving",
+            topics: [
+              "Functions",
+              "Parameters",
+              "Return",
+              "Scope",
+              "Lambda",
+              "Recursion Basics",
+              "Pattern Programs",
+              "Number Problems"
+            ]
+          },
+          {
+            title: "Week 4 — File Handling + Exception Handling",
+            topics: [
+              "Read Files",
+              "Write Files",
+              "JSON",
+              "CSV",
+              "try-except",
+              "Custom Exceptions",
+              "Mini File Manager"
+            ]
+          }
+        ]
+      },
+
+      {
+        phase: "PHASE 2 — Intermediate Python",
+        badge: "phase-2",
+        weeks: [
+          {
+            title: "Week 5 — OOP",
+            topics: [
+              "Classes",
+              "Objects",
+              "Constructor",
+              "Inheritance",
+              "Polymorphism",
+              "Encapsulation",
+              "Abstraction"
+            ]
+          },
+          {
+            title: "Week 6 — Advanced Python",
+            topics: [
+              "Iterators",
+              "Generators",
+              "Decorators",
+              "List Comprehension",
+              "map/filter/reduce",
+              "Modules",
+              "Packages"
+            ]
+          },
+          {
+            title: "Week 7 — SQL + Databases",
+            topics: [
+              "SQL Basics",
+              "Joins",
+              "Group By",
+              "Window Functions",
+              "Indexing",
+              "Normalization",
+              "Transactions"
+            ]
+          },
+          {
+            title: "Week 8 — APIs + Backend",
+            topics: [
+              "REST APIs",
+              "Flask",
+              "FastAPI",
+              "CRUD APIs",
+              "Validation",
+              "Authentication"
+            ]
+          }
+        ]
+      },
+
+      {
+        phase: "PHASE 3 — DSA + Interview Prep",
+        badge: "phase-3",
+        weeks: [
+          {
+            title: "Week 9 — Arrays + Complexity",
+            topics: [
+              "Big O",
+              "Arrays",
+              "Sliding Window",
+              "Two Pointer",
+              "Prefix Sum"
+            ]
+          },
+          {
+            title: "Week 10 — Strings + Hashing",
+            topics: [
+              "Hashing",
+              "Frequency Maps",
+              "Palindrome Problems",
+              "String Algorithms"
+            ]
+          },
+          {
+            title: "Week 11 — Linked List + Stack + Queue",
+            topics: [
+              "Singly Linked List",
+              "Doubly Linked List",
+              "Stack",
+              "Queue",
+              "Deque"
+            ]
+          },
+          {
+            title: "Week 12 — Recursion + Backtracking",
+            topics: [
+              "Recursion",
+              "Subset Problems",
+              "Permutations",
+              "N Queens"
+            ]
+          },
+          {
+            title: "Week 13 — Trees",
+            topics: [
+              "Binary Tree",
+              "BST",
+              "DFS",
+              "BFS",
+              "Tree Traversal"
+            ]
+          },
+          {
+            title: "Week 14 — Heap + Greedy",
+            topics: [
+              "Heap",
+              "Priority Queue",
+              "Greedy Algorithms",
+              "Intervals"
+            ]
+          },
+          {
+            title: "Week 15 — Graphs",
+            topics: [
+              "Graph Representation",
+              "BFS/DFS",
+              "Shortest Path",
+              "Topological Sort"
+            ]
+          },
+          {
+            title: "Week 16 — Dynamic Programming",
+            topics: [
+              "Memoization",
+              "Tabulation",
+              "Knapsack",
+              "LIS",
+              "DP Patterns"
+            ]
+          }
+        ]
+      },
+
+      {
+        phase: "PHASE 4 — GenAI + Agentic AI",
+        badge: "phase-4",
+        weeks: [
+          {
+            title: "Week 17 — AI Foundations",
+            topics: [
+              "AI vs ML vs DL vs GenAI",
+              "LLM Basics",
+              "Tokens",
+              "Embeddings",
+              "Transformers"
+            ]
+          },
+          {
+            title: "Week 18 — OpenAI + APIs",
+            topics: [
+              "OpenAI API",
+              "Prompt Engineering",
+              "Chatbots",
+              "Streaming",
+              "Token Handling"
+            ]
+          },
+          {
+            title: "Week 19 — LangChain",
+            topics: [
+              "Chains",
+              "Prompts",
+              "Memory",
+              "Tools",
+              "Agents"
+            ]
+          },
+          {
+            title: "Week 20 — RAG Systems",
+            topics: [
+              "Vector Databases",
+              "Embeddings",
+              "Chunking",
+              "Retrieval",
+              "RAG Chatbot"
+            ]
+          },
+          {
+            title: "Week 21 — Agentic AI",
+            topics: [
+              "AI Agents",
+              "Tool Calling",
+              "Workflows",
+              "Autonomous Agents",
+              "Multi-Agent Systems"
+            ]
+          },
+          {
+            title: "Week 22 — AI Projects",
+            topics: [
+              "AI Assistant",
+              "Document Chatbot",
+              "Resume Analyzer",
+              "SQL AI Agent"
+            ]
+          }
+        ]
+      },
+
+      {
+        phase: "PHASE 5 — DevOps & Cloud Native",
+        badge: "phase-5",
+        weeks: [
+          {
+            title: "Week 23 — Docker Fundamentals",
+            topics: [
+              "Docker Installation & Setup",
+              "Docker Images",
+              "Docker Containers",
+              "Dockerfile Basics",
+              "Docker Build",
+              "Docker Run",
+              "Docker Compose Intro",
+              "Container Lifecycle"
+            ]
+          },
+          {
+            title: "Week 24 — Advanced Docker",
+            topics: [
+              "Docker Volumes",
+              "Docker Networks",
+              "Multi-Stage Builds",
+              "Docker Compose Multi-Container",
+              "Environment Variables",
+              "Docker Registry & Hub",
+              "Best Practices",
+              "Dockerize Python App Project"
+            ]
+          },
+          {
+            title: "Week 25 — Kubernetes Basics",
+            topics: [
+              "Kubernetes Architecture",
+              "kubectl Setup",
+              "Pods",
+              "ReplicaSets",
+              "Deployments",
+              "Services (ClusterIP, NodePort, LoadBalancer)",
+              "Namespaces",
+              "Labels & Selectors"
+            ]
+          },
+          {
+            title: "Week 26 — Advanced Kubernetes",
+            topics: [
+              "ConfigMaps",
+              "Secrets",
+              "Persistent Volumes (PV & PVC)",
+              "Ingress",
+              "StatefulSets",
+              "DaemonSets",
+              "Resource Limits",
+              "Deploy Multi-Tier App Project"
+            ]
+          },
+          {
+            title: "Week 27 — Helm",
+            topics: [
+              "Helm Installation",
+              "Helm Charts Basics",
+              "values.yaml",
+              "Chart Templates",
+              "Helm Install/Upgrade/Rollback",
+              "Helm Repositories",
+              "Create Custom Helm Chart",
+              "Package & Deploy with Helm"
+            ]
+          },
+          {
+            title: "Week 28 — CI/CD",
+            topics: [
+              "CI/CD Concepts",
+              "GitHub Actions Basics",
+              "Workflows & Jobs",
+              "Build & Test Automation",
+              "Docker Build in CI/CD",
+              "Kubernetes Deploy in CI/CD",
+              "Environment Variables & Secrets",
+              "Complete CI/CD Pipeline Project"
+            ]
+          }
+        ]
+      }
+    ];
+
+    const roadmapContainer = document.getElementById("roadmap");
+
+    function renderRoadmap() {
+      roadmapContainer.innerHTML = "";
+
+      roadmapData.forEach((phaseObj, phaseIndex) => {
+        const phaseDiv = document.createElement("div");
+        phaseDiv.classList.add("phase", "card");
+
+        phaseDiv.innerHTML = `<h2>${phaseObj.phase}<span class="phase-badge ${phaseObj.badge}">Phase ${phaseIndex + 1}</span></h2>`;
+
+        phaseObj.weeks.forEach((week, weekIndex) => {
+          const weekDiv = document.createElement("div");
+          weekDiv.classList.add("week");
+
+          weekDiv.innerHTML = `<h3>${week.title}</h3>`;
+
+          week.topics.forEach((topic, topicIndex) => {
+            const topicId = `p${phaseIndex}w${weekIndex}t${topicIndex}`;
+            const checked = localStorage.getItem(topicId) === "true";
+
+            const topicDiv = document.createElement("div");
+            topicDiv.classList.add("topic");
+
+            topicDiv.innerHTML = `
+              <input type="checkbox" id="${topicId}" ${checked ? "checked" : ""}>
+              <label for="${topicId}" class="${checked ? "completed" : ""}">
+                ${topic}
+              </label>
+            `;
+
+            const checkbox = topicDiv.querySelector("input");
+            const label = topicDiv.querySelector("label");
+
+            checkbox.addEventListener("change", () => {
+              localStorage.setItem(topicId, checkbox.checked);
+
+              if (checkbox.checked) {
+                label.classList.add("completed");
+              } else {
+                label.classList.remove("completed");
+              }
+
+              updateProgress();
+            });
+
+            weekDiv.appendChild(topicDiv);
+          });
+
+          phaseDiv.appendChild(weekDiv);
+        });
+
+        roadmapContainer.appendChild(phaseDiv);
+      });
+
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const xpPerTopic = 10;
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(.daily):not(.interview):not(.leetcode):not(.project)');
+
+      const total = checkboxes.length;
+      const completed = [...checkboxes].filter(c => c.checked).length;
+      const remaining = total - completed;
+      const percent = Math.round((completed / total) * 100);
+      const xp = completed * xpPerTopic;
+      const level = Math.floor(xp / 100) + 1;
+
+      document.getElementById("completedCount").textContent = completed;
+      document.getElementById("remainingCount").textContent = remaining;
+      document.getElementById("progressPercent").textContent = percent + "%";
+      document.getElementById("xpPoints").textContent = xp + " XP";
+      document.getElementById("level").textContent = "Level " + level;
+
+      const progressBar = document.getElementById("progressBar");
+      progressBar.style.width = percent + "%";
+      progressBar.textContent = percent + "%";
+
+      drawChart(percent);
+    }
+
+    function exportProgress() {
+      const data = JSON.stringify(localStorage);
+      const blob = new Blob([data], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "python_devops_tracker_progress.json";
+      a.click();
+    }
+
+    function importProgress() {
+      document.getElementById("importFile").click();
+    }
+
+    function handleImport(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          
+          // Clear existing localStorage
+          const notesToKeep = localStorage.getItem("notes");
+          localStorage.clear();
+          
+          // Restore notes
+          if (notesToKeep) {
+            localStorage.setItem("notes", notesToKeep);
+          }
+          
+          // Import new data
+          for (let key in data) {
+            localStorage.setItem(key, data[key]);
+          }
+          
+          location.reload();
+        } catch (err) {
+          alert("Error importing file. Please check the file format.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetProgress() {
+      if (confirm("Reset all progress? This will clear all checkboxes but keep your notes.")) {
+        const notesToKeep = localStorage.getItem("notes");
+        localStorage.clear();
+        if (notesToKeep) {
+          localStorage.setItem("notes", notesToKeep);
+        }
+        location.reload();
+      }
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+
+    function searchTopics() {
+      const input = document.getElementById("searchBox").value.toLowerCase();
+      const topics = document.querySelectorAll(".topic");
+
+      topics.forEach(topic => {
+        const text = topic.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+          topic.style.display = "flex";
+        } else {
+          topic.style.display = "none";
+        }
+      });
+    }
+
+    const notes = document.getElementById("notes");
+
+    notes.value = localStorage.getItem("notes") || "";
+
+    notes.addEventListener("input", () => {
+      localStorage.setItem("notes", notes.value);
+    });
+
+    function showReminder() {
+      alert("🚀 Time to study Python, DSA, GenAI & DevOps and build your future career!");
+    }
+
+    function downloadNotes() {
+      const notesText = document.getElementById("notes").value;
+      const blob = new Blob([notesText], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "learning_notes.txt";
+      a.click();
+    }
+
+    function drawChart(percent) {
+      const canvas = document.getElementById("progressChart");
+
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#1e293b";
+      ctx.fillRect(0, 20, 300, 30);
+
+      ctx.fillStyle = "#38bdf8";
+      ctx.fillRect(0, 20, percent * 3, 30);
+
+      ctx.font = "18px Arial";
+      ctx.fillStyle = "white";
+      ctx.fillText("Progress Chart", 10, 15);
+    }
+
+    // Save interview, leetcode, project, and daily checklist states
+    document.addEventListener("DOMContentLoaded", function() {
+      const interviewChecks = document.querySelectorAll(".interview");
+      const leetcodeChecks = document.querySelectorAll(".leetcode");
+      const projectChecks = document.querySelectorAll(".project");
+      const dailyChecks = document.querySelectorAll(".daily");
+
+      function setupCheckboxes(checkboxes, prefix) {
+        checkboxes.forEach((checkbox, index) => {
+          const key = `${prefix}_${index}`;
+          checkbox.checked = localStorage.getItem(key) === "true";
+          
+          checkbox.addEventListener("change", () => {
+            localStorage.setItem(key, checkbox.checked);
+            if (checkbox.checked) {
+              checkbox.parentElement.querySelector("input").parentElement.style.opacity = "0.6";
+            } else {
+              checkbox.parentElement.querySelector("input").parentElement.style.opacity = "1";
+            }
+          });
+        });
+      }
+
+      setupCheckboxes(interviewChecks, "interview");
+      setupCheckboxes(leetcodeChecks, "leetcode");
+      setupCheckboxes(projectChecks, "project");
+      setupCheckboxes(dailyChecks, "daily");
+    });
+
+    renderRoadmap();
+  </script>
+</body>
+</html>

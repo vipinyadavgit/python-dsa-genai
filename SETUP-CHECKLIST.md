@@ -1,256 +1,316 @@
-# 🛠️ Setup Phase Checklist
+# 🚀 Setup Checklist - Python + DSA + GenAI Roadmap
 
-**Status**: Setting up environment  
-**Start Learning**: When you're ready, just say **"Start Week 1 Day 1"**
+## ✅ Initial Setup
 
----
+### 1. Development Environment
 
-## ✅ Complete These Before Starting Day 1
+- [ ] Install **Python 3.11+** ([Download](https://www.python.org/downloads/))
+- [ ] Install **VS Code** ([Download](https://code.visualstudio.com/))
+- [ ] Install **Git** ([Download](https://git-scm.com/downloads))
 
-### 1. Software Installation
+### 2. VS Code Extensions
 
-- [x] **Java JDK 17+** installed
+- [ ] Python (Microsoft)
+- [ ] Pylance (Microsoft)
+- [ ] Python Debugger
+- [ ] Jupyter
+- [ ] GitLens
+- [ ] GitHub Copilot (Optional, recommended)
+- [ ] Thunder Client (for API testing)
 
-  ```bash
-  java --version
-  # Should show version 17 or higher
-  ```
+### 3. Python Setup
 
-  📥 Download: https://www.oracle.com/java/technologies/downloads/
+```bash
+# Verify Python installation
+python --version
 
-- [x] **Maven** installed (or use VS Code extension)
+# Create virtual environment
+python -m venv venv
 
-  ```bash
-  mvn --version
-  ```
+# Activate virtual environment
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
 
-  📥 Download: https://maven.apache.org/download.cgi
-
-- [x] **VS Code** installed with extensions:
-  - [x] Extension Pack for Java
-  - [x] Spring Boot Extension Pack
-  - [x] GitLens
-  - [x] Docker (for later, but install now)
-  - [x] GitHub Copilot / Claude / ChatGPT extension
-
-- [x] **Git** configured properly
-
-  ```bash
-  git config --global user.name "Your Name"
-  git config --global user.email "your.email@harman.com"
-  git config --list
-  ```
-
-- [x] **Postman** or **REST Client** (for API testing later)
-      📥 Download: https://www.postman.com/downloads/
-      Or: Install "REST Client" VS Code extension
-
----
-
-### 2. Repository Setup
-
-- [x] Repository cloned ✅ (Already done!)
-- [x] README.md updated ✅ (Already done!)
-- [x] Documentation created ✅ (Already done!)
-- [x] Can open in VS Code: `code .`
-- [x] All folders visible in Explorer
-- [x] Git push works (`git push origin main`)
-
----
-
-### 3. Learning Resources Bookmarked
-
-Bookmark these for quick access:
-
-**YouTube Channels**:
-
-- [x] [Telusko](https://www.youtube.com/@Telusko)
-- [x] [Kunal Kushwaha](https://www.youtube.com/@KunalKushwaha)
-- [] [Java Brains](https://www.youtube.com/@Java.Brains)
-- [] [Amigoscode](https://www.youtube.com/@amigoscode)
-- [] [TechWorld with Nana](https://www.youtube.com/@TechWorldwithNana)
-
-**Practice Platforms**:
-
-- [x] [LeetCode](https://leetcode.com)
-- [x] [HackerRank Java](https://www.hackerrank.com/domains/java)
-
-**Documentation**:
-
-- [ ] [Java Docs](https://docs.oracle.com/en/java/)
-- [x] [Spring.io](https://spring.io)
-
----
-
-### 4. Tracker Setup
-
-- [x] Open `tracker/RoadmapTracker_Final_v3.html` in browser
-- [x] Bookmark the tracker page (you'll open it daily)
-- [x] **DO NOT set start date yet** (wait until you actually start)
-- [x] Test the buttons:
-  - [x] "Weekly Progress Report" works
-  - [x] "Export Progress" downloads JSON
-  - [x] "Import Progress" opens file picker
-
----
-
-### 5. Documentation Review
-
-Read these (30-45 minutes total):
-
-- [x] **README.md** - Project overview ✅
-- [ ] **notes/chatgpt/roadmap-plan.md** - Complete learning strategy (IMPORTANT!)
-- [ ] **notes/chatgpt/vscode-chat-guide.md** - How to use AI assistance
-- [ ] **notes/chatgpt/DAY1-QUICK-START.md** - What to expect on Day 1
-
-**Pro Tip**: Don't read everything in detail now. Just skim to understand the structure.
-
----
-
-### 6. VS Code Chat Testīng your AI setup:
-
-- [ ] Open VS Code Chat panel (`Ctrl+Alt+I` or left sidebar)
-- [ ] Click "Add Context" button
-- [ ] Find and add: `notes/chatgpt/roadmap-plan.md`
-- [ ] Test with a simple question:
-  ```
-  What's my 24-week learning plan about?
-  ```
-- [ ] If you get a good answer, you're all set! ✅
-
----
-
-### 7. Folder Structure Understanding
-
-Make sure you understand where things go:
-
+# Install essential packages
+pip install --upgrade pip
+pip install jupyter notebook ipython
 ```
-java-backend-devops-golang-roadmap/
-│
-├── 01-core-java/          ← Week 1-4 code goes here
-│   ├── week01/
-│   │   ├── day01/         ← You'll create this on Day 1
-│   │   ├── day02/
-│   │   └── ...
-│   └── week02/
-│
-├── notes/
-│   ├── chatgpt/           ← Reference docs (already created)
-│   ├── core-java.md       ← Your learning notes go here
-│   └── interview-qa.md    ← Interview Q&A you'll build
-│
-├── tracker/
-│   └── RoadmapTracker_Final_v3.html  ← Open daily
-│
-└── README.md              ← Project overview
+
+### 4. Git Configuration
+
+```bash
+# Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Initialize repository
+git init
+git add .
+git commit -m "Initial commit - Python DSA GenAI Roadmap"
+
+# Connect to GitHub
+git remote add origin <your-repo-url>
+git push -u origin main
 ```
 
 ---
 
-### 8. Optional But Recommended
+## 📚 Phase-Specific Setup
 
-- [ ] **Docker Desktop** installed (for Weeks 13-16)
-      📥 Download: https://www.docker.com/products/docker-desktop/
+### Phase 1: Python Foundations (Weeks 1-4)
 
-- [ ] **DBeaver** or database client (for Week 5 SQL)
-      📥 Download: https://dbeaver.io/download/
+- [ ] Python installed and working
+- [ ] VS Code configured
+- [ ] First "Hello World" program
 
-- [ ] **Create a learning calendar** (Google Calendar, Notion, etc.)
-  - Block 1.5-2 hours daily for learning
-  - Set reminder: "Week X Day Y - Java Learning"
-
-- [ ] **Tell someone about your plan** (accountability partner)
-  - Friend, family, or colleague
-  - Share your GitHub repo with them
+**No additional setup needed**
 
 ---
 
-## 🎯 Setup Complete Checklist
+### Phase 2: Intermediate Python (Weeks 5-8)
 
-Before saying **"Start Week 1 Day 1"**, make sure:
+- [ ] Install PostgreSQL ([Download](https://www.postgresql.org/download/))
+- [ ] Install database GUI (pgAdmin or DBeaver)
+- [ ] Install FastAPI and dependencies:
 
-- [ ] All required software installed and working
-- [ ] VS Code Chat tested successfully
-- [ ] Read the roadmap-plan.md (at least skimmed)
-- [ ] HTML tracker bookmarked
-- [ ] Git push works
-- [ ] Have 1.5-2 hours free time for Day 1
-- [ ] Mentally ready and excited! 💪
-
----
-
-## 🚀 When You're Ready
-
-### To Start Learning:
-
-1. Open VS Code in this workspace
-2. Open Chat panel
-3. Add context: `notes/chatgpt/roadmap-plan.md`
-4. Type: **"Start Week 1 Day 1"**
-
-That's it! The AI will guide you through everything.
-
----
-
-## 📝 Setup Notes
-
-Use this space to track what you've completed:
-
-```
-[Date: ________]
-
-✅ Completed today:
--
--
--
-
-⏳ Still need to do:
--
--
-
-💡 Questions/Issues:
--
--
-
-📅 Plan to start Day 1 on: ____________
+```bash
+pip install fastapi uvicorn sqlalchemy psycopg2-binary pydantic
 ```
 
 ---
 
-## 🆘 Having Issues?
+### Phase 3: DSA + Interview Prep (Weeks 9-16)
 
-### Java not working?
+- [ ] Create LeetCode account ([LeetCode](https://leetcode.com/))
+- [ ] Create HackerRank account (optional)
+- [ ] Install data structure visualization tools (optional)
 
-- Check JAVA_HOME environment variable
-- Add Java bin to PATH
-- Restart VS Code after installing
-
-### VS Code Chat not available?
-
-- Install GitHub Copilot extension (needs subscription)
-- Or try free alternatives: ChatGPT extension, Claude
-
-### Git push failing?
-
-- Check git credentials
-- Try: `git config --list`
-- May need to authenticate with GitHub
-
-### Can't open HTML tracker?
-
-- Just double-click the file
-- Should open in your default browser
-- Works offline, no server needed
+```bash
+pip install matplotlib  # For visualizing algorithms
+```
 
 ---
 
-## ⏭️ Next Step
+### Phase 4: GenAI + Agentic AI (Weeks 17-22)
 
-**When setup is done**: Come back and say **"Start Week 1 Day 1: Java Setup + How Java Works"**
+- [ ] Create OpenAI account ([OpenAI](https://platform.openai.com/))
+- [ ] Get OpenAI API key
+- [ ] Install GenAI packages:
 
-Until then, take your time with setup. There's no rush! 😊
+```bash
+pip install openai langchain chromadb faiss-cpu tiktoken
+pip install langchain-community langchain-openai
+pip install python-dotenv  # For environment variables
+```
+
+- [ ] Create `.env` file for API keys:
+
+```
+OPENAI_API_KEY=your_api_key_here
+```
+
+- [ ] Add `.env` to `.gitignore`
 
 ---
 
-_Setup Phase Started: February 13, 2026_  
-_Ready to begin learning: When you say so! 🎯_
+## 🗂️ Folder Structure Verification
+
+Run this command to verify your folder structure:
+
+```bash
+tree /F  # Windows
+tree    # Mac/Linux
+```
+
+Expected structure:
+
+```
+python-genai-roadmap/
+├── phase1-python-foundations/
+│   ├── week01-python-basics/
+│   ├── week02-strings-collections/
+│   ├── week03-functions-problem-solving/
+│   └── week04-file-exception-handling/
+├── phase2-intermediate-python/
+│   ├── week05-oop/
+│   ├── week06-advanced-python/
+│   ├── week07-sql-databases/
+│   └── week08-apis-backend/
+├── phase3-dsa-interview-prep/
+│   └── [8 weeks]
+├── phase4-genai-agentic-ai/
+│   └── [6 weeks]
+├── projects/
+├── interview-prep/
+├── daily-notes/
+├── resources/
+└── tracker/
+```
+
+---
+
+## 🎯 Progress Tracker Setup
+
+- [ ] Open `tracker/python-dsa-genai-tracker.html` in browser
+- [ ] Bookmark the tracker
+- [ ] Test the checkbox functionality
+- [ ] Verify progress calculation works
+
+---
+
+## 📝 Daily Workflow Setup
+
+### Morning Routine
+
+1. Open VS Code
+2. Activate virtual environment
+3. Open tracker HTML
+4. Review yesterday's notes
+5. Plan today's learning
+
+### Evening Routine
+
+1. Push code to GitHub
+2. Update tracker
+3. Write daily notes
+4. Plan tomorrow
+
+---
+
+## 🔧 Useful Commands
+
+### Python Virtual Environment
+
+```bash
+# Create venv
+python -m venv venv
+
+# Activate (Windows)
+venv\Scripts\activate
+
+# Activate (Mac/Linux)
+source venv/bin/activate
+
+# Deactivate
+deactivate
+
+# Install from requirements
+pip install -r requirements.txt
+
+# Generate requirements
+pip freeze > requirements.txt
+```
+
+### Git Commands
+
+```bash
+# Daily workflow
+git status
+git add .
+git commit -m "Day X: Completed topic Y"
+git push
+
+# Create new branch
+git checkout -b feature/new-topic
+
+# Merge branch
+git checkout main
+git merge feature/new-topic
+```
+
+### Running Python
+
+```bash
+# Run Python file
+python filename.py
+
+# Interactive Python
+python
+
+# Run Jupyter Notebook
+jupyter notebook
+```
+
+---
+
+## 📦 Essential Python Packages
+
+### Phase 1-2
+
+```bash
+pip install requests beautifulsoup4
+pip install pandas numpy
+pip install pytest  # Testing
+```
+
+### Phase 3
+
+```bash
+pip install matplotlib seaborn  # Visualization
+```
+
+### Phase 4
+
+```bash
+pip install openai langchain chromadb
+pip install streamlit  # For building AI UIs
+pip install gradio    # Alternative UI framework
+```
+
+---
+
+## 🛠️ Troubleshooting
+
+### Python not found
+
+- Verify installation: `python --version`
+- Add Python to PATH (Windows)
+- Reinstall if needed
+
+### Virtual environment issues
+
+- Delete `venv` folder
+- Recreate: `python -m venv venv`
+
+### Package installation fails
+
+- Update pip: `pip install --upgrade pip`
+- Use `pip3` instead of `pip`
+- Check internet connection
+
+### Git push fails
+
+- Verify remote URL: `git remote -v`
+- Check credentials
+- Generate SSH key if needed
+
+---
+
+## ✅ Final Checklist
+
+Before starting Phase 1:
+
+- [ ] All software installed
+- [ ] VS Code extensions active
+- [ ] Git configured
+- [ ] Virtual environment working
+- [ ] Tracker HTML opens in browser
+- [ ] GitHub repository created
+- [ ] First commit pushed
+- [ ] README.md looks good on GitHub
+
+---
+
+## 🚀 Ready to Start!
+
+Once all checkboxes are complete, you're ready to begin:
+
+**Start with**: [Phase 1 Week 1 - Python Basics](phase1-python-foundations/week01-python-basics/)
+
+---
+
+**Last Updated**: May 29, 2026  
+**Status**: Setup Complete ✅  
+**Next**: Begin Phase 1!
