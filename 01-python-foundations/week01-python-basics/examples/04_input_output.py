@@ -133,9 +133,9 @@ print(f"{num1} ÷ {num2} = {num1 / num2:.2f}")
 print("\n--- Price Table ---")
 print(f"{'Item':<15} {'Quantity':>10} {'Price':>10}")
 print("-" * 35)
-print(f"{'Laptop':<15} {1:>10} {₹65000:>10,}")
-print(f"{'Mouse':<15} {2:>10} {₹500:>10,}")
-print(f"{'Keyboard':<15} {1:>10} {₹1500:>10,}")
+print(f"{'Laptop':<15} {1:>10} {65000:>10,}")
+print(f"{'Mouse':<15} {2:>10} {500:>10,}")
+print(f"{'Keyboard':<15} {1:>10} {1500:>10,}")
 
 # ============================================
 # COMMENTED INTERACTIVE EXAMPLES
