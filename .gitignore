@@ -8,3 +8,10 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+# JetBrains
+.idea/
+
+# Editor / local environment
+.vscode/
+.venv/

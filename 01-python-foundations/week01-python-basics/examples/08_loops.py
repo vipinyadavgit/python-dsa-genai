@@ -460,28 +460,28 @@ for i in range(1, 16):
 #Practice 3 — Username Checker
 # username = ""
 # while username != "vipin":
-# username = input("Enter username: ")
+#     username = input("Enter username: ")
 # print("Welcome, vipin!")
 
 # #======================================
 # #second approach
 # while True:
-# username = input("Enter username: ")
-# if username == "vipin":
-# print("Welcome, vipin!")
-# break
-# print("Wrong username, try again...")
+#     username = input("Enter username: ")
+#     if username == "vipin":
+#         print("Welcome, vipin!")
+#         break
+#     print("Wrong username, try again...")
 #=======================================
 # Mini Challenge
 # 🎯 Secret Number Game
 
 
 # while true :
-# number = int(input("enter a number"))
-# if number == 7:
-# print("correct")
-# break
-# print("enter number again")
+#     number = int(input("enter a number"))
+#     if number == 7:
+#         print("correct")
+#         break
+#     print("enter number again")
 
 num = ""
 while num != 7:
