@@ -475,8 +475,7 @@ for i in range(1, 16):
 # Mini Challenge
 # 🎯 Secret Number Game
 
-
- while true :
+ while True :
      number = int(input("enter a number"))
      if number == 7:
          print("correct")
