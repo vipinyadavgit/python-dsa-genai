@@ -330,3 +330,171 @@ for i in range(4, 0, -1):
 print("\n✅ Loops completed successfully!")
 print("🎯 Practice these patterns and examples!")
 #===========================================
+#practice problems
+#===========================================
+#Q1. Print each character of a string on a new line
+text = "python"
+for char in text:
+    print(char)
+#============================================
+#Q2. Count Characters
+text = "vipin"
+count = 0
+for char in text:
+    print(char)
+    count += 1
+print(f"  Total characters: {count}")
+#============================================
+#Q3. Count Characters
+text = "python"
+i=0
+while i < len(text):
+    print(text[i])
+    i += 1
+print(f"  Total characters: {i}")
+#============================================
+#Q3. Count Vowels
+text = "education"
+count = 0
+for char in text:
+    if char in "aeiouAEIOU":
+        count += 1
+        print(f"  Vowel: {char}")
+        continue
+    print(f"  Consonant: {char}")
+print(f"  Total vowels: {count}")
+#============================================
+#Q5 Reverse String
+text = "python"
+reversed_text = ""
+i=len(text) - 1
+while i>=0:
+    reversed_text += text[i]
+    i = i- 1
+print(f"  Original: {text}")
+print(f"  Reversed: {reversed_text}")
+#============================================
+#Q6 Palindrome String Check
+text = "madam"
+new_text = ""
+for ch in text:
+    new_text = ch + new_text
+    if new_text == text:
+        print(f"  '{text}' is a palindrome")
+print(f"  Original: {text}")
+print(f"  Reversed: {new_text}")
+#============================================
+#Q7 PyThOn Count Uppercase Letters
+
+text = "PyThOn"
+count = 0
+for i in range(len(text)):
+ if text[i].isupper():
+    print("Uppercase letter:", text[i])
+ count = count + 1
+print("count", count)
+#============================================
+# #Count Uppercase Letters (without len function)
+
+text1 = "PyThOn"
+count = 0
+for ch in text1:
+ if ch.isupper():
+     print("Uppercase letter:",ch)
+ count = count + 1
+print("count", count)
+
+# #=====================================
+# # Count Uppercase Letters
+
+text2 = "PyThOn"
+i = 0
+count = 0
+while i < len(text):
+ if text[i].isupper():
+    print("Uppercase letter:",text[i])
+    count +=1
+    i +=1
+print("count",count)
+
+#=======================================
+#Q7 Remove Spaces
+text = "vipin yadav"
+new_text = ""
+i = 0
+while i < len(text):
+ if text[i] != " ":
+     new_text += text[i]
+ i += 1
+print("Original:", text)
+print("Without spaces:", new_text)
+#=======================================
+#Q8 Print Characters at Even Index
+text = "vipinyadav"
+i =0
+while i < len(text):
+ #print(text[i])
+ if i%2 ==0 :
+     print(text[i])
+ i+=1
+print("count",i)
+#=======================================
+#using FOR loop
+text = "vipinyadav"
+for i in range(len(text)):
+ if i % 2 ==0:
+    print("using for loop",text[i])
+#=======================================
+#using FOR loop
+str1 = 'vipinyadav'
+for x in range(0,len(str1),2):
+ print("using range slicing", str1[x])
+#=======================================
+#=======================================
+# Practice 2 - Skip Multiples of 3
+for i in range(1, 16):
+ if i % 3 == 0:
+     continue
+ print(i)
+#=======================================
+#Practice 3 — Username Checker
+# username = ""
+# while username != "vipin":
+# username = input("Enter username: ")
+# print("Welcome, vipin!")
+
+# #======================================
+# #second approach
+# while True:
+# username = input("Enter username: ")
+# if username == "vipin":
+# print("Welcome, vipin!")
+# break
+# print("Wrong username, try again...")
+#=======================================
+# Mini Challenge
+# 🎯 Secret Number Game
+
+
+# while true :
+# number = int(input("enter a number"))
+# if number == 7:
+# print("correct")
+# break
+# print("enter number again")
+
+num = ""
+while num != 7:
+ num = int(input("enter a number : "))
+print("number is 7")
+
+#===========================================
+#second approach
+
+secret = 7
+while True:
+ guess = int(input("Enter a number: "))
+ if guess == secret:
+     print("Correct Guess")
+ break
+#===============================================
