@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,9 @@
       padding: 20px;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       margin-bottom: 10px;
     }
 
@@ -41,7 +44,7 @@
       padding: 20px;
       border-radius: 14px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .progress-container {
@@ -203,13 +206,28 @@
       font-weight: bold;
     }
 
-    .phase-1 { background: #8b5cf6; }
-    .phase-2 { background: #ec4899; }
-    .phase-3 { background: #f59e0b; }
-    .phase-4 { background: #10b981; }
-    .phase-5 { background: #3b82f6; }
+    .phase-1 {
+      background: #8b5cf6;
+    }
+
+    .phase-2 {
+      background: #ec4899;
+    }
+
+    .phase-3 {
+      background: #f59e0b;
+    }
+
+    .phase-4 {
+      background: #10b981;
+    }
+
+    .phase-5 {
+      background: #3b82f6;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
 
@@ -578,7 +596,59 @@
             ]
           },
           {
-            title: "Week 18 — OpenAI + APIs",
+            title: "Week 18 — Pandas Fundamentals (Beginner)",
+            topics: [
+              "Installation & Setup",
+              "Series Basics",
+              "DataFrame Creation",
+              "Data Types in Pandas",
+              "Reading CSV & JSON Files",
+              "DataFrame Inspection (head, tail, info, describe)",
+              "Column Selection & Access",
+              "Basic Indexing"
+            ]
+          },
+          {
+            title: "Week 18b — Data Cleaning & Preprocessing",
+            topics: [
+              "Handling Missing Data (NaN, dropna, fillna)",
+              "Removing Duplicates",
+              "Data Type Conversion (astype)",
+              "String Operations & Text Cleaning",
+              "Datetime Parsing & Handling",
+              "Outlier Detection Basics",
+              "Data Normalization & Scaling",
+              "Reset & Rename Operations"
+            ]
+          },
+          {
+            title: "Week 18c — Data Analysis & Transformation",
+            topics: [
+              "Indexing Deep Dive (loc, iloc, at, iat)",
+              "Boolean Indexing & Filtering",
+              "GroupBy Operations (group, aggregate, apply)",
+              "Merging DataFrames (merge, join, concat)",
+              "Reshaping Data (pivot, melt, stack, unstack)",
+              "Aggregations (sum, mean, count, std)",
+              "Sorting & Ranking",
+              "Window Functions"
+            ]
+          },
+          {
+            title: "Week 18d — GenAI Data Prep & Advanced Topics",
+            topics: [
+              "Reading Large Datasets (chunks, dtypes optimization)",
+              "Categorical Data Handling",
+              "Time Series Basics",
+              "Apply Functions (map, apply, applymap)",
+              "Performance Optimization Tips",
+              "Export Data (CSV, JSON, Parquet, Excel)",
+              "Data Pipeline Creation",
+              "Real-World GenAI Dataset Prep"
+            ]
+          },
+          {
+            title: "Week 19 — OpenAI + APIs",
             topics: [
               "OpenAI API",
               "Prompt Engineering",
@@ -815,24 +885,24 @@
       if (!file) return;
 
       const reader = new FileReader();
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         try {
           const data = JSON.parse(e.target.result);
-          
+
           // Clear existing localStorage
           const notesToKeep = localStorage.getItem("notes");
           localStorage.clear();
-          
+
           // Restore notes
           if (notesToKeep) {
             localStorage.setItem("notes", notesToKeep);
           }
-          
+
           // Import new data
           for (let key in data) {
             localStorage.setItem(key, data[key]);
           }
-          
+
           location.reload();
         } catch (err) {
           alert("Error importing file. Please check the file format.");
@@ -913,7 +983,7 @@
     }
 
     // Save interview, leetcode, project, and daily checklist states
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const interviewChecks = document.querySelectorAll(".interview");
       const leetcodeChecks = document.querySelectorAll(".leetcode");
       const projectChecks = document.querySelectorAll(".project");
@@ -923,7 +993,7 @@
         checkboxes.forEach((checkbox, index) => {
           const key = `${prefix}_${index}`;
           checkbox.checked = localStorage.getItem(key) === "true";
-          
+
           checkbox.addEventListener("change", () => {
             localStorage.setItem(key, checkbox.checked);
             if (checkbox.checked) {
@@ -944,4 +1014,5 @@
     renderRoadmap();
   </script>
 </body>
+
 </html>
