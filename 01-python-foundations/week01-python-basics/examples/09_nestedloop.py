@@ -314,7 +314,7 @@ print("==============================")
       * * * 
         * 
 '''
-n=5
+n=4
 for i in range(n-1):
     for j in range(i,n-1):
         print(" ",end=" ")
