@@ -1,5 +1,7 @@
 # ==========================================
-# Q1.
+# Q1.Given the expression a < b == c < d, what is happening here? Explain with an example.
+# a. a, b, c, d = 1, 2, 2, 3
+# b. print (a < b == c < d) # Test this code
 # ==========================================
 
 a, b, c, d = 1, 2, 2, 3
