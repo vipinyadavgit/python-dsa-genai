@@ -32,7 +32,6 @@ print(nums)
 '''
 insert()
 Definition:-
-Inserts a new element at the end of the list.
 Adds an element at a specific position.
 '''
 '''
