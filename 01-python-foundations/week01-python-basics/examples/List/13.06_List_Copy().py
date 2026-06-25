@@ -71,6 +71,7 @@ b = a.copy()
 b[0] = 100
 
 print(a)
+print(b)
 #==============================================================================================
 
 nums = [10,20]
@@ -86,7 +87,6 @@ marks1=marks
 marks1[0]=999
 print(marks)
 print(marks1)
-
 
 # [999, 90, 100]
 # [999, 90, 100]
@@ -165,6 +165,7 @@ a[0].append(30)
 print(b)
 print(a)
 #[[10,20]]
+#[[10, 20, 30]]
 #========================================================================================
 '''
 GOLDEN RULE
@@ -180,7 +181,7 @@ Replacement
 a[0] = [100]  #changes reference.
 
 Modification
-append() #==>changes actual shared object.
+append() #==>   changes actual shared object.
 
 
 If you do:

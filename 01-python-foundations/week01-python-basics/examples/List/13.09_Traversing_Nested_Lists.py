@@ -128,7 +128,8 @@ students = [
 ]
 for row in students:
     for value in row:
-        print(value)
+        print(value,end=' ')
+    print()
 
 
 
