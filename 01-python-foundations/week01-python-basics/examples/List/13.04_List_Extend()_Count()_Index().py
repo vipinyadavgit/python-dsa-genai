@@ -15,7 +15,7 @@ print(nums)
 #   Interview Favorite
 #   append vs extend
 
-#==>    Using Append() we can a single value at a time, and it gets added at the end.
+#==>    Using Append() we can add single value at a time, and it gets added at the end.
 #==>    Using Extend() we can add multiple values.
 
 nums = [10,20]
@@ -92,8 +92,8 @@ print(tech)
 
 print(tech.count("Python"))
 
-print(tech.index("Docker"))
 
+print(tech.index("Docker"))
 print(tech)
 
 

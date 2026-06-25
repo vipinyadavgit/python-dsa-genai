@@ -14,10 +14,6 @@ names = ["Vipin", "Rahul", "Aman"]
 #Mixed List
 data = ["Vipin", 25, True, 99.5]
 #========================================================================================
-#Visual Understanding
-names = ["Vipin", "Rahul", "Aman", "Neha"]
-
-#Memory view:
 
 #Visual Understanding
 names = ["Vipin", "Rahul", "Aman", "Neha"]
