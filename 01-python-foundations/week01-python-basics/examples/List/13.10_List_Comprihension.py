@@ -122,7 +122,7 @@ print("print odds",odds)
 
 #======================================================================
 #long names
-names = ["Vipin","AI","Python","ML"]
+names = ["Vipin","AI","Python","Data-Science"]
 long_names = [ch for ch in names if len(ch)>3]
 print("long_name",long_names)
 #======================================================================
@@ -140,7 +140,7 @@ nums = [i for i in range(1,11) if i % 2 != 0]
 print(nums)
 #[1, 3, 5, 7, 9]
 
-names = ["AI","Python","ML","Docker"]
+names = ["AI","Python","Data-Science","Docker"]
 result = [name for name in names if len(name) > 2]
 print(result)
 #['Python', 'Docker']
@@ -166,7 +166,7 @@ print("odd numbers:- ", odd)
 ''' practice 3:-
 Create a new list containing only names whose length is greater than 2.'''
 
-names = ["AI","Python","ML","Docker","Go"]
+names = ["AI","Python","Data-Science","Docker","Go"]
 result = [ch for ch in names if len(ch) > 2]
 print(result)
 #======================================================================================
