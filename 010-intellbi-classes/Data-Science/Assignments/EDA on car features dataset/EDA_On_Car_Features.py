@@ -106,8 +106,8 @@ print(df.duplicated().sum())
 
 
 # 4e. Split the dataset into categorical and numerical columns
-cat = df.select_dtypes(include="object").columns
-num = df.select_dtypes(exclude="object").columns
+cat = df.select_dtypes(include=["object", "string"]).columns
+num = df.select_dtypes(exclude=["object", "string"]).columns
 
 print("\nCategorical columns:")
 print(cat)
@@ -115,6 +115,7 @@ print(cat)
 print("\nNumerical columns:")
 print(num)
 
+print("print shape",df.shape)
 
 # 4f. Handling error values
 # Error values can be ?, @, etc.
@@ -143,6 +144,10 @@ for col in outlier_cols:
 # But we do need to convert a few categorical columns into numerical format
 # so that they can be used in analysis.
 # We use one-hot encoding for Transmission Type and Driven_Wheels.
+
+# Keep a copy of the cleaned dataset before encoding.
+# This copy will be used for groupby analysis on the original category names.
+df_original = df.copy()
 
 print("\nBefore encoding, unique values in Transmission Type:")
 print(df["Transmission Type"].unique())
@@ -173,6 +178,23 @@ print(df[["Make", "Model", "MSRP"]].sort_values("MSRP", ascending=False).head(10
 print("\nSummary of MSRP:")
 print(df["MSRP"].describe())
 
+# 4i. Bivariate analysis
+# Bivariate analysis means studying two variables together.
+
+print("\nAverage MSRP by vehicle size:")
+print(df_original.groupby("Vehicle Size")["MSRP"].mean())
+
+print("\nAverage MSRP by transmission type:")
+print(df_original.groupby("Transmission Type")["MSRP"].mean())
+
+print("\nAverage MSRP by number of doors:")
+print(df_original.groupby("Number of Doors")["MSRP"].mean())
+
+print("\nCorrelation between numeric columns:")
+num_cols_for_corr = ["Engine HP", "Engine Cylinders", "highway MPG", "city mpg", "Popularity", "MSRP"]
+print(df[num_cols_for_corr].corr())
+
+
 
 # Graph 1: Histogram of MSRP
 # This shows how car prices are spread across the dataset.
@@ -193,21 +215,6 @@ plt.xlabel("MSRP")
 plt.show()
 
 
-# 4i. Bivariate analysis
-# Bivariate analysis means studying two variables together.
-
-print("\nAverage MSRP by vehicle size:")
-print(df.groupby("Vehicle Size")["MSRP"].mean())
-
-print("\nAverage MSRP by transmission type:")
-print(df.groupby("Transmission Type")["MSRP"].mean())
-
-print("\nAverage MSRP by number of doors:")
-print(df.groupby("Number of Doors")["MSRP"].mean())
-
-print("\nCorrelation between numeric columns:")
-num_cols_for_corr = ["Engine HP", "Engine Cylinders", "highway MPG", "city mpg", "Popularity", "MSRP"]
-print(df[num_cols_for_corr].corr())
 
 
 # Graph 3: Scatter plot of Engine HP vs MSRP
