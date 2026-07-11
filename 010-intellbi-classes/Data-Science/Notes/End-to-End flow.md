@@ -921,7 +921,6 @@ ML Ready Dataset
 END
 
 >   Practice Rule For You
-
 1. Understand Problem
 2. Identify Target
 3. Identify Features
@@ -935,5 +934,4 @@ END
 11. Perform Multivariate Analysis
 12. Extract Insights
 13. Prepare for ML
-
 
