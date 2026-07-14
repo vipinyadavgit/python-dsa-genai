@@ -746,4 +746,207 @@ Q1 - 1.5×IQR
 
 Above:
 Q3 + 1.5×IQR
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+###    What is variance?
+
+>   Answer: Variance is a statistical measure that represents how much data points 
+    are spread around the mean.
+----------------------------------------------------------------------------------------------------
+###    Why do we square the difference in variance calculation?
+
+>   Answer: We square differences to remove negative values and give more importance to larger 
+            deviations.
+---------------------------------------------------------------------------------------------------
+###    What happens to variance when outliers are present?
+
+>   Answer: Variance increases because outliers create large deviations from the mean.
+---------------------------------------------------------------------------------------------------
+###    Can two datasets have the same mean but different variance?
+
+>   Answer: Yes. Mean only represents the center of data, while variance represents the spread 
+            around the mean.
+--------------------------------------------------------------------------------------------------
+###    Why is variance sensitive to outliers?
+>   Variance squares the distance between each value and the mean. Since outliers have a very large    distance, squaring makes their impact extremely large.
+--------------------------------------------------------------------------------------------------
+###     Difference between Range and Variance
+>   Range measures the total spread between minimum and maximum values, whereas variance measures   how much each data point deviates from the mean.
+
+| Range                                        | Variance                           |
+|----------------------------------------------|------------------------------------|
+| Difference between maximum and minimum value | Average squared distance from mean |
+| Uses only two values                         | Uses all values                    |
+| Less mathematical                            | More statistically meaningful      |
+| Affected by extreme values                   | Highly affected by outliers        |
+| Unit remains same                            | Unit becomes squared               |
+
+-----------------------------------------------------------------------------------------------
+
+### Important Memory Trick 🧠
+
+Remember:
+
+>   Range:
+Only looks at:
+Minimum + Maximum
+
+>Variance:
+Looks at:
+Every value + Mean
+-------------------------------------------------------------------------------------------------
+### Standard Deviation
+>   Definition:
+        Standard deviation measures how much individual data points are spread around the mean, using the same unit as the original data.
+
+>   Simple words:
+        It tells the average distance of data points from the mean.
+--------------------------------------------------------------------------------------------------
+###     Relationship Between Variance and Standard Deviation
+
+>   Standard deviation is simply the square root of variance.
+Formula:
+
+Standard Deviation  = √ Variance
+SD=     √25 =   5
+
+or
+
+Variance    =   (Standard Deviation)^2
+
+| Variance                            | Standard Deviation            |
+|-------------------------------------|-------------------------------|
+| Average squared deviation from mean | Square root of variance       |
+| Unit becomes squared                | Same unit as original data    |
+| Harder to interpret                 | Easier to interpret           |
+| Used in mathematical calculations   | Used for understanding spread |
+| Sensitive to outliers               | Sensitive to outliers         |
+
+----------------------------------------------------------------------------------------------------
+
+### What is Standard Deviation?
+
+>   Answer: Standard deviation is a measure of spread that indicates how far data points are from the mean. It is the square root of variance.
+-----------------------------------------------------------------------------------------------------
+### Why do we use Standard Deviation instead of Variance?
+
+>   Answer: Standard deviation is preferred because it is expressed in the same unit as the original data, making it easier to interpret.
+-----------------------------------------------------------------------------------------------------
+### What happens to standard deviation when data points are more spread out?
+
+>   Answer: Standard deviation increases because data points have larger deviations from the mean.
+-----------------------------------------------------------------------------------------------------
+### Can standard deviation be zero?
+
+>   Answer: Yes. If all values in a dataset are identical, standard deviation is zero because there is no variation.
+
+>   Example:    5,5,5,5,5
+-----------------------------------------------------------------------------------------------------
+### Why is standard deviation more interpretable than variance?
+
+>   Interview-ready answer: Standard deviation is easier to interpret because it is expressed in the same unit as the original data, whereas variance is expressed in squared units.
+----------------------------------------------------------------------------------------------------
+### Relationship between Variance and Standard Deviation.
+
+>Interview answer:  Standard deviation is the square root of variance. Variance represents squared deviations from the mean, while standard deviation converts it back into the original measurement unit.
+----------------------------------------------------------------------------------------------------
+### ### Important Concept Summary 🧠
+
+>Remember this:
+Mean
+ |
+ |  (Where is the center?)
+ ↓
+
+>Variance
+ |
+ |  (How much spread? But squared unit)
+ ↓
+
+>Standard Deviation
+ |
+ |  (How much spread? Same unit)
+ ↓
+
+--------------------------------------------------------------------------------------------------
+###     Variance vs Standard Deviation Quick Memory
+
+| Concept            | Question it answers                     |
+|--------------------|-----------------------------------------|
+| Mean               | Where is the center?                    |
+| Range              | How far are minimum and maximum?        |
+| IQR                | How spread is the middle 50%?           |
+| Variance           | How much is data spread from mean?      |
+| Standard Deviation | What is the average distance from mean? |
+
+###     Main Difference
+| Variance                                           | Standard Deviation                    |
+|----------------------------------------------------|---------------------------------------|
+| Square of standard deviation                       | Square root of variance               |
+| Measures spread using squared units                | Measures spread using original units  |
+| Harder to interpret                                | Easier to interpret                   |
+| Used more in mathematical/statistical calculations | Used more for practical understanding |
+| More sensitive to large deviations                 | Also sensitive to outliers            |
+| Symbol: σ²                                         | Symbol: σ                             |
+
+---------------------------------------------------------------------------------------------------
+### Relationship Between Variance and Standard Deviation
+
+          Square
+Standard Deviation  ─────────→  Variance
+
+
+          Square Root
+Standard Deviation  ←─────────  Variance
+
+---------------------------------------------------------------------------------------------------
+###     What is the relationship between variance and standard deviation?
+
+>   Answer: Standard deviation is the square root of variance. Variance is the squared measure of deviation from the mean.
+---------------------------------------------------------------------------------------------------
+###     Why is standard deviation preferred over variance?
+
+>   Answer: Standard deviation is preferred because it is expressed in the same unit as the original data, making interpretation easier.
+---------------------------------------------------------------------------------------------------
+###     Which is more affected by outliers?
+
+>   Answer:Both variance and standard deviation are affected by outliers because both depend on squared deviations from the mean.
+--------------------------------------------------------------------------------------------------
+###     Difference Between Population and Sample Variance
+
+| Population Variance             | Sample Variance                 |
+|---------------------------------|---------------------------------|
+| Uses complete data              | Uses subset of data             |
+| Denominator = N                 | Denominator = n-1               |
+| Mean = population mean          | Mean = sample mean              |
+| Used when all data is available | Used when estimating population |
+| Symbol σ²                       | Symbol s²                       |
+
+-------------------------------------------------------------------------------------------------
+###     What is the difference between population variance and sample variance?
+
+>Answer:    Population variance calculates variance using the complete population and divides by N, whereas sample variance estimates population variance from a sample and divides by N-1.
+-------------------------------------------------------------------------------------------------
+###     Why do we use N-1 instead of N in sample variance?
+
+>   Answer: Because sample variance tends to underestimate population variance. Dividing by N-1 corrects this bias. This is called Bessel's correction.
+--------------------------------------------------------------------------------------------------
+###     When do we use population variance?
+
+>   Answer: When we have complete information about the entire population.
+--------------------------------------------------------------------------------------------------
+###  When do we use sample variance?
+
+>   Answer: When we only have a subset of data and want to estimate population behavior.
+--------------------------------------------------------------------------------------------------
+###  Which variance is usually used in Data Science?
+
+>   Answer:Sample variance is commonly used because real-world datasets usually represent samples of a larger population.
+--------------------------------------------------------------------------------------------------
+###     Why is sample variance usually greater than population variance?
+
+>   Interview answer:   Sample variance is usually greater because dividing by n-1 instead of n compensates for the fact that samples generally underestimate the true population variation.
+--------------------------------------------------------------------------------------------------
+###     Explain N vs N-1.
+
+>   interview-ready: In population variance, we divide by N because we have complete population data. In sample variance, we divide by n-1 because the sample is used to estimate the population, and n-1 corrects the bias caused by using sample data.
+-------------------------------------------------------------------------------------------------

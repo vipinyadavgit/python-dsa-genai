@@ -2138,5 +2138,391 @@ Q1 - 1.5×IQR
 
 Above:
 Q3 + 1.5×IQR
+------------------------------------------------------------------------------------------------
+================================================================================================
+### Variance
+------------------------------------------------------------------------------------------------
+### What is Variance?
 
+>   Definition:
+Variance measures how much individual data points differ from the mean value of the dataset.
+
+>In simple words:
+Variance tells us the amount of spread in data.
+OR
+> How far data points are spread from the mean.
+
+##  Example
+Dataset B:  10,30,50,70,90
+
+Mean:   50
+
+Difference:     -40,-20,0,20,40
+
+Values are far from mean.
+Variance will be high
+-------------------------------------------------------------------------------------------------
+### Why Do We Need Variance?
+>   Understand Data Spread
+
+Example:
+Two investment funds:
+Fund A
+10%
+11%
+10%
+9%
+
+>Returns are stable.
+
+Fund B
+-20%
+10%
+30%
+50%
+
+>Returns fluctuate.
+
+Both may have similar average return.
+
+>Variance tells:    Risk level
+
+Higher variance:    More fluctuation,   More risk
+------------------------------------------------------------------------------------------
+### 3. Variance Calculation Intuition
+
+Let's calculate manually.
+
+Dataset:2,4,6,8,10
+Step 1: Find Mean
+
+Formula:
+>   Mean=Number of values/Sum of values
+
+Calculation:
+(2+4+6+8+10)/5
+30/5
+
+Mean:   6
+
+Step 2: Find Difference from Mean
+
+>   Formula:    Value - Mean
+
+Table:
+Value	    Value - Mean
+2	        2-6 = -4
+4	        4-6 = -2
+6	        6-6 = 0
+8	        8-6 = 2
+10	        10-6 = 4
+
+>   Step 3: Square the Differences
+
+Why square? = Because negative and positive differences would cancel.
+
+Example:    -4 + (-2) + 0 + 2 + 4 = 0
+
+That would incorrectly show no variation.
+
+So we square.
+
+>   Difference	    Square
+    -4	            16
+    -2	            4
+    0	            0
+    2	            4
+    4	            16
+
+Step 4: Find Average of Squared Differences
+
+Sum:    16+4+0+4+16 =   40
+
+Divide by number of values: 40/5
+
+Variance:   8
+
+>   Formula of Variance:- 
+
+Population Variance
+>   Variance =
+                       Sum of   (Value - Mean)²
+                        ---------------------
+                         Number of values
+
+| Symbol | Meaning          |
+|--------|------------------|
+| σ²     | Variance         |
+| x      | Individual value |
+| μ      | Population mean  |
+| N      | Number of values |
+
+###### σ2 = ∑(x−μ)2/N
+
+Meaning:
+
+Find distance from mean
+Square distance
+Average those distances
+-------------------------------------------------------------------------------------------------
+
+### Limitations of Variance
+1. Unit Problem
+
+Example:    Salary: ₹
+
+Variance:   ₹²
+
+Squared unit is difficult to interpret.
+>   This is why we use:     Standard Deviation
+--------------------------------------------------------------------------------------------------
+
+### Sensitive to Outliers
+>   Extreme values increase variance.
+
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+### Standard Deviation
+>   Definition:
+        Standard deviation measures how much individual data points are spread around the mean, using the same unit as the original data.
+
+>   Simple words:
+        It tells the average distance of data points from the mean.
+------------------------------------------------------------------------------------------------------
+### Relationship Between Variance and Standard Deviation
+
+>   Standard deviation is simply the square root of variance.
+Formula:
+
+Standard Deviation  = √ Variance
+SD=     √25 =   5
+
+or
+
+Variance    =   (Standard Deviation)^2
+-------------------------------------------------------------------------------------------------
+### How to calculate standard variation
+
+>   Dataset:    2,4,6,8,10
+mean :- 6
+
+>Step 1: Calculate deviation
+    Value	Value-Mean
+    2	    -4
+    4	    -2
+    6	    0
+    8	    2
+    10	    4
+
+
+>Step 2: Square deviation
+    Deviation	Square
+    -4	        16
+    -2	        4
+    0	        0
+    2	        4
+    4	        16
+
+
+>Step 3: Calculate Variance
+
+    Sum:    16+4+0+4+16=40
+    Divide by number of values: 40/5=8
+    Variance:   8
+
+>Step 4: Take Square Root
+
+SD= √ 8
+
+SD= 2.82
+
+>   Therefore:  Standard Deviation = 2.82
+------------------------------------------------------------------------------------------
+###     Standard Deviation and Normal Distribution
+
+#   Approximately:  
+    Mean ± 1 SD
+
+#   contains:   68% data
+    Mean ± 2 SD
+
+#   contains:   95% data
+    Mean ± 3 SD
+
+#   contains:   99.7% data
+
+Example:    Average height: 170 cm
+
+SD: 10 cm
+
+Then:   68% people:     160 - 180 cm
+----------------------------------------------------------------------------------------
+
+###     Variance vs Standard Deviation
+
+| Variance                            | Standard Deviation            |
+|-------------------------------------|-------------------------------|
+| Average squared deviation from mean | Square root of variance       |
+| Unit becomes squared                | Same unit as original data    |
+| Harder to interpret                 | Easier to interpret           |
+| Used in mathematical calculations   | Used for understanding spread |
+| Sensitive to outliers               | Sensitive to outliers         |
+
+------------------------------------------------------------------------------------------
+### Important Concept Summary 🧠
+
+>Remember this:
+Mean
+ |
+ |  (Where is the center?)
+ ↓
+
+>Variance
+ |
+ |  (How much spread? But squared unit)
+ ↓
+
+>Standard Deviation
+ |
+ |  (How much spread? Same unit)
+ ↓
+
+--------------------------------------------------------------------------------------------------
+###     Variance vs Standard Deviation Quick Memory
+
+| Concept            | Question it answers                     |
+|--------------------|-----------------------------------------|
+| Mean               | Where is the center?                    |
+| Range              | How far are minimum and maximum?        |
+| IQR                | How spread is the middle 50%?           |
+| Variance           | How much is data spread from mean?      |
+| Standard Deviation | What is the average distance from mean? |
+
+-------------------------------------------------------------------------------------------------
+###     Variance vs Standard Deviation
+
+>   Variance
+
+>   Definition:Variance measures how much data points are spread around the mean by calculating the              average squared deviation.
+
+Formula:
+
+Variance=   ∑(x−μ)^2
+            ---------
+                N
+Example:    Dataset:    10,20,30,40,50
+
+Mean:   30
+
+Variance tells: How much the values are scattered from 30.
+------------------------------------------------------------------------------------------------
+### Standard Deviation
+
+>   Definition: Standard deviation is the square root of variance and represents spread in the original unit.
+
+Formula:    SD= √ Variance
+
+Example:    If: Variance = 100  Then:
+
+SD  =     √ 100   = 10
+---------------------------------------------------------------------------------------------
+###     Why Do We Need Both?
+
+#   Variance
+>   Variance is useful for mathematical calculations
+>   Many statistical algorithms use variance internally.
+
+Examples:
+
+ANOVA
+Regression analysis
+Probability models
+Feature selection techniques
+>   Because squaring removes negative values and highlights large deviations.
+
+#  Standard Deviation
+>   Standard Deviation is useful for human interpretation   Because it comes back to original units. 
+
+###     Main Difference
+| Variance                                           | Standard Deviation                    |
+|----------------------------------------------------|---------------------------------------|
+| Square of standard deviation                       | Square root of variance               |
+| Measures spread using squared units                | Measures spread using original units  |
+| Harder to interpret                                | Easier to interpret                   |
+| Used more in mathematical/statistical calculations | Used more for practical understanding |
+| More sensitive to large deviations                 | Also sensitive to outliers            |
+| Symbol: σ²                                         | Symbol: σ                             |
+
+---------------------------------------------------------------------------------------------------
+### Relationship Between Variance and Standard Deviation
+
+          Square
+Standard Deviation  ─────────→  Variance
+
+
+          Square Root
+Standard Deviation  ←─────────  Variance
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+###   Population Variance vs Sample Variance
+
+>The main interview confusion is:
+                Why does population variance divide by N, but sample variance divide by N-1?
+
+##  Population
+>Definition: Population means the complete set of all observations we are interested in studying.
+
+##  Sample
+>Definition:Sample is a smaller subset selected from the population to analyze and make conclusions.
+
+--------------------------------------------------------------------------------------------------
+###     Population Variance
+
+>   When we have all data points, we calculate population variance.
+
+    σ2  =   ∑(x−μ)^2/N
+
+| Symbol | Meaning               |
+|--------|-----------------------|
+| σ²     | Population variance   |
+| x      | Individual value      |
+| μ      | Population mean       |
+| N      | Total population size |
+
+
+###     Sample Variance
+Now imagine:    Those 5 values are only a sample from a bigger population.
+
+Example:    Population:     Millions of customers
+
+Sample: 5 customers ,   Now we calculate sample variance.
+
+Formula:- 
+s^2     = ∑(x−xˉ)^2 /   n−1
+
+###     Why n-1?
+This is the most important concept.
+
+>   The reason:     Sample mean is already calculated from the sample.
+
+Because we estimate population variance using a sample, our sample usually has less variation than the real population.
+
+>   Example:    Population: All students in India
+    Sample:     100 students
+
+The sample may accidentally select similar students. So sample variance tends to underestimate the true population variance.
+
+>   To correct this:    We divide by:   n-1  instead of:    n
+
+This is called: Bessel's Correction
+------------------------------------------------------------------------------------------------
+###     Difference Between Population and Sample Variance
+
+| Population Variance             | Sample Variance                 |
+|---------------------------------|---------------------------------|
+| Uses complete data              | Uses subset of data             |
+| Denominator = N                 | Denominator = n-1               |
+| Mean = population mean          | Mean = sample mean              |
+| Used when all data is available | Used when estimating population |
+| Symbol σ²                       | Symbol s²                       |
 
