@@ -4,6 +4,10 @@ import seaborn as sns
 import numpy as np
 from pyparsing import col
 
+'''
+colab file link
+https://colab.research.google.com/drive/1_Oh02nSPk8lwXI60OhefrUCuzZD9VHJG?usp=sharing'''
+
 #df  =   pd.read_csv(r"C:\Users\deeks\Desktop\python\python-repo\010-intellbi-classes\Data-Science\Dataset_DS\Advertisement_Dataset.csv")
 print("Loading data...")
 df = pd.read_csv("../Dataset_DS/Advertisement_Dataset.csv")
