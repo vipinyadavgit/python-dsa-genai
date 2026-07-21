@@ -14,7 +14,7 @@
 		ii. Ways to handle null values:
 	    		- Delete the rows that have null value using dropna() (When there are small number of missing rows)
       			- Delete columns using df.drop() when there are more than 50% of the values in a particular column as null
-     		- If the column has categorical datatype: Impute/Replace with mode
+     			- If the column has categorical datatype: Impute/Replace with mode
 			- if the column has continuous numerical dataype: Impute/replace with mean
 			- if the column has discrete numerical dataype: Impute/replace with median
 	d. Handling duplicates:
@@ -44,4 +44,16 @@
 	i. Univariate analysis (analysis done on single variable)and bivariate analysis (analysis done on 2 variables)
 		i. Univariate- Plot histogram of every/major columns, Check for the unique values in each column
 		ii. Bivariate - Sales vs (TV, Radio, Newspaper), correlation analysis, pair plot analyis
+5. ML model building:
+	i. Import the models whichever you will be building
+	ii. Divide the dataset into X (input), y (output) variables. X will have all the input data, y will have all the output data points
+	iii. Further divide into X_train, X_test, y_train, y_test
+	iv. Train our model using X_train, y_train
+	v. Pass X_test as an input to the newly created model, predict y_pred
+	vi. Model evaluation: Compare y_pred with y_test and find the following metrics:
+			a. Regression: MAE, MSE, R2-score, RMSE
+			b. Classification: confusion matrix, accuracy, precision, recall, F1-Score
 	
+
+
+
