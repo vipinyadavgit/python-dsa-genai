@@ -79,63 +79,137 @@ Univariate Analysis
 Bivariate Analysis
 Correlation Analysis
 ----------------------------------------------------------------------------------------
+Module 4: Probability & Hypothesis Testing
 ========================================================================================
-Module 6 — Feature Engineering
 
-Topics:
-
-Categorical Encoding
-Why Encoding is Needed
-Label Encoding
-fit_transform()
-inverse_transform()
-.map()
-Ordinal Encoding
-One Hot Encoding
-pandas.get_dummies()
-Comparison of all encoding methods
-Interview questions
-Python practice (later)
-
-----------------------------------------------------------------------------------------
-Module 7 — Hypothesis Testing
-------------------------------------------------------------------------------------------------
-Topics:
-
-Confidence Interval (covered from PPT)
+Probability
+⏸️ Bernoulli Distribution
+⏸️ Binomial Distribution
 Hypothesis Testing
 Define Hypothesis
 Null Hypothesis
 Alternative Hypothesis
 p-value
-Significance Level (α)
-One-tailed vs Two-tailed Test
+Significance Level
 Left-tailed Test
 Right-tailed Test
 Z-Test
 T-Test
 Chi-Square Test
 ANOVA
-Decision Flow
-Interview Questions
 
+----------------------------------------------------------------------------------------
+Module 5: Feature Engineering
 ------------------------------------------------------------------------------------------------
-Module 8 — Machine Learning Fundamentals
+
+Feature Engineering Basics
+🔶 What is Feature Engineering (On Hold)
+What is a Feature?
+Types of Features
+Categorical Data
+Numerical Data
+Why Encoding is Needed
+Encoding
+Label Encoding
+fit()
+transform()
+fit_transform()
+inverse_transform()
+.map()
+Ordinal Encoding
+One-Hot Encoding
+pandas.get_dummies()
+Advanced Feature Engineering (Future)
+Feature Creation
+Feature Selection
+Feature Scaling
+Data Standardization
+Normalization (if covered later by coaching)
 ------------------------------------------------------------------------------------------------
-Topics:
+Module 6: Machine Learning Fundamentals
+------------------------------------------------------------------------------------------------
 
 AI vs ML vs Deep Learning vs Data Science
-How ML Works (Complete Workflow)
-Types of ML
+Machine Learning Workflow
+Types of Machine Learning
 Supervised Learning
 Unsupervised Learning
 Reinforcement Learning
-Type of ML Problems
-Classification
+Types of ML Problems
 Regression
-Real-world Examples
-Interview Questions
+Classification
+-----------------------------------------------------------------------------------------------
+Module 7: Supervised Learning Algorithms ⭐ (New Module)
+-----------------------------------------------------------------------------------------------
 
+Supervised Learning Models
+What is a Supervised Learning Model?
+Types of Supervised Learning Models
+Linear Regression
+Introduction
+Working
+Assumptions
+Linearity
+Independence
+Normality
+No Multicollinearity
+Equation of Simple Linear Regression
+Slope Formula
+Intercept
+Cost Function (if coaching covers it)
+R² Score
+Multiple Linear Regression
+Working
+Assumptions
+Difference from Simple Linear Regression
+Logistic Regression
+Introduction
+Working
+Sigmoid Function
+Probability
+Decision Boundary
+Binary Classification
+Multiclass Classification (if coaching covers it)
+Decision Tree
+Working
+Root Node
+Parent Node
+Child Node
+Branch
+Split
+Leaf Node
+Impurity (Gini/Entropy if coaching teaches later)
+Random Forest
+Working
+Bootstrap Sampling
+Voting
+Advantages
+Limitations
+Hyperparameter Tuning
+What is a Hyperparameter?
+Grid Search
+Random Search
+Cross Validation (if covered later)
+
+------------------------------------------------------------------------------------------------
+Module 8: Model Evaluation
+------------------------------------------------------------------------------------------------
+
+Regression Metrics
+MAE
+MSE
+RMSE
+R² Score
+Classification Metrics
+Confusion Matrix
+TP
+TN
+FP
+FN
+Accuracy
+Precision
+Recall
+F1 Score
 ------------------------------------------------------------------------------------------------
 Module 9 — Model Evaluation Metrics
 ------------------------------------------------------------------------------------------------
@@ -157,3 +231,65 @@ F1 Score
 Choosing the right metric
 Interview Questions
 
+--------------------------------------------------------------------------------------------
+Module 9: Practical Implementation (Deferred)
+--------------------------------------------------------------------------------------------
+
+Pandas
+Feature Encoding Practical
+map()
+get_dummies()
+Matplotlib
+Visualization
+Statistics
+Pearson Correlation
+Bernoulli Practical
+Binomial Practical
+Machine Learning
+Linear Regression Project
+Classification Project
+Feature Engineering Project
+End-to-End ML Project
+
+----------------------------------------------------------------------------------------------
+Module 10: Model Improvement & Production (Future)
+----------------------------------------------------------------------------------------------
+
+Bias vs Variance
+Overfitting
+Underfitting
+Cross Validation
+Train/Test Split
+K-Fold Cross Validation
+Pipeline
+Feature Importance
+Model Deployment Basics
+
+----------------------------------------------------------------------------------------------
+| Module                                      | Status                            |
+|---------------------------------------------|-----------------------------------|
+| Module 1 – Data Fundamentals                | ✅ 100%                            |
+| Module 2 – Statistics                       | 🟡 ~90% (2 theory topics pending) |
+| Module 3 – EDA                              | ✅ Theory Complete                 |
+| Module 4 – Probability & Hypothesis Testing | 🔄 Not Started                    |
+| Module 5 – Feature Engineering              | 🔄 Not Started                    |
+| Module 6 – ML Fundamentals                  | 🔄 Not Started                    |
+| Module 7 – Supervised Algorithms            | 🔄 Not Started                    |
+| Module 8 – Evaluation Metrics               | 🔄 Not Started                    |
+| Module 9 – Practical Implementation         | 🔄 Deferred                       |
+| Module 10 – Model Improvement               | 🔄 Not Started                    |
+
+----------------------------------------------------------------------------------------------
+
+| Module                   | Theory | Practice | Revision | Coding | Project | Status |
+|--------------------------|:------:|:--------:|:--------:|:------:|:-------:|:------:|
+| Data Fundamentals        |   ✅    |    ✅     |    ⏳     |   ⏳    |   N/A   |   🟡   |
+| Statistics               |   🟡   |    ✅     |    ⏳     |   ⏳    |   N/A   |   🟡   |
+| EDA                      |   ✅    |    🟡    |    ⏳     |   ⏳    |    ⏳    |   🟡   |
+| Hypothesis Testing       |   ⏳    |    ⏳     |    ⏳     |   ⏳    |   N/A   |   ⚪    |
+| Feature Engineering      |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ⏳    |   ⚪    |
+| ML Fundamentals          |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ⏳    |   ⚪    |
+| Supervised Algorithms    |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ⏳    |   ⚪    |
+| Model Evaluation         |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ⏳    |   ⚪    |
+| Practical Implementation |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ✅    |   ⚪    |
+| Model Improvement        |   ⏳    |    ⏳     |    ⏳     |   ⏳    |    ⏳    |   ⚪    |

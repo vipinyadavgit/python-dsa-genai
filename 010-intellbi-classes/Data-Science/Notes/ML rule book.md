@@ -53,7 +53,60 @@
 	vi. Model evaluation: Compare y_pred with y_test and find the following metrics:
 			a. Regression: MAE, MSE, R2-score, RMSE
 			b. Classification: confusion matrix, accuracy, precision, recall, F1-Score
+
+>	================================================================================================
+###		Choosing right ML Algorithm.
+----------------------------------------------------------------------------------------------------
 	
+Choosing the right ML algorithm:
+1. There is no universally best algo.
+2. the model depends on business problem, requirements, computational constraints, validation performance. 
+
+	Steps:
+	a. Understanding business problem
+	b. type of ML Problem to apply
+	c. Understand the dataset
+	d. Choose different algos to apply
+	e. train multiple models
+	f. Hyperpareter tuning
+	g. cross validation
+	h. Compare the model metrices
+	i. Choose the best model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
