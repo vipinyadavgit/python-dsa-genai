@@ -808,6 +808,22 @@ MODULE 12 : DEEP LEARNING
 1. Deep Learning Fundamentals
 2. Why Deep Learning
 3. ML vs Deep Learning
+3. NEW Lesson 3 – Perceptron (Add this)
+Perceptron
+History of Perceptron
+Working of Perceptron
+Components of Perceptron
+Input
+Weight
+Bias
+Summation
+Activation Function
+Output
+Perceptron Equation
+Advantages of Perceptron
+Limitations of Perceptron
+Single Layer Perceptron
+Multi Layer Perceptron (Introduction)
 4. When to use ML vs Deep Learning
 5. Biological Neuron
 6. Artificial Neuron
@@ -816,12 +832,46 @@ MODULE 12 : DEEP LEARNING
 9. Input Layer
 10. Output Layer
 11. Activation Function (Basic)
+Activation Function
+Why Activation Function is Needed
+Linear vs Non-linear Activation
+Types of Activation Functions
+
+• Step Function
+• Sigmoid
+• Tanh
+• ReLU
+• Leaky ReLU
+• ELU (optional)
+• Softmax
+
+Advantages & Disadvantages
+When to Use Which Activation Function
 12. TensorFlow Introduction
 13. Feed Forward Neural Network
 14. CNN
 15. RNN
 16. LSTM
+17. Training Process
 
+Sample
+Dataset
+Batch
+Mini Batch
+Epoch
+Iteration
+
+Learning Rate
+Optimizer (Introduction)
+
+Loss Function
+Cost Function
+
+Forward Propagation
+Backpropagation (Introduction)
+
+Weight Update
+Bias Update
 =========================================================
 MODULE 13 : PRACTICAL IMPLEMENTATION
 =========================================================
